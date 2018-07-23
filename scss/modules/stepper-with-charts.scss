@@ -1,0 +1,17 @@
+
+
+.stepper-with-charts {
+  font-size: 1.0rem;
+
+  h3 {
+    padding-bottom: 0.3rem;
+    font-size: 1.17em;
+  }
+}
+
+.stepper-with-charts .fixed-height-stepper-explanation {
+  @include lucify-medium-paragraph-normal();
+  margin-top: 0.6rem;
+  margin-bottom: 2.0rem;
+}
+

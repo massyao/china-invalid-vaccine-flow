@@ -1,0 +1,24 @@
+
+
+.loading {
+	display: table;
+
+	.loading__img {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.loading__text {
+		padding-left: 1.5rem;
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	img {
+		width: 5rem;
+		height: 5rem;
+		vertical-align: middle;
+	}
+}
+
+

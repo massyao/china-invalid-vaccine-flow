@@ -1,0 +1,14 @@
+
+.fixed-height-stepper-explanation {
+  //margin-top: 100px;
+  //margin-left: 100px;
+  //width: 300px;
+  //border: 1px solid black;
+  position: relative;
+}
+
+.fixed-height-stepper-explanation > .content {
+  position: absolute;
+  //top: 0px;
+  //border: 1px solid red;
+}

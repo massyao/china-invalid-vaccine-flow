@@ -1,0 +1,31 @@
+@function imagePath($img) {
+  @if index($asset-files, $img) {
+    @return "/#{$asset-path}images/#{nth($asset-files-rev,index($asset-files,$img))}";
+  } @else {
+    @return "/#{$asset-path}images/#{$img}";  
+  }
+}
+
+@import 'ext/ext.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'base.scss';
+
+
+
+@import 'modules/modules.scss';
+
+@import "vaccine-main-content.scss";
+@import "vaccine-map.scss";
+@import "vaccine-map-segment.scss";
+@import "vaccine-map-borders-layer.scss";
+@import "vaccine-map-country-counts-layer.scss";
+@import "vaccine-map-country-labels-layer.scss";
+@import "vaccine-map-count-bars-layer.scss";
+@import "vaccine-map-controls-and-legend.scss";
+@import "vaccine-map-time-layer.scss";
+@import "vaccine-map-line-chart.scss";
+@import "vaccine-sankey.scss";
+@import "vaccine-sankey-segment.scss";
+@import "vaccine-soccer-segment.scss";
+@import "vaccine-data-updated.scss";
