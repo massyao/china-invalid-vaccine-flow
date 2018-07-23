@@ -41,7 +41,7 @@ class VaccineMapCountryCountsLayer extends React.Component{
         .forEach(function(country) {
           var cc = counts[country];
           if (cc != null) {
-            var val = cc.asylumApplications;
+            var val = cc.vaccine_countApplications;
             items.push(this.renderText(country, -val));
             totalReceivedCount += val;
           }
@@ -54,8 +54,8 @@ class VaccineMapCountryCountsLayer extends React.Component{
         .forEach(function(country) {
           var cc = counts[country];
           if (cc != null) {
-            var val = cc.asylumApplications;
-            items.push(this.renderText(country, cc.asylumApplications));
+            var val = cc.vaccine_countApplications;
+            items.push(this.renderText(country, cc.vaccine_countApplications));
             totalLeftCount += val;
           }
         }.bind(this));
@@ -64,7 +64,7 @@ class VaccineMapCountryCountsLayer extends React.Component{
     // On the hovered country we show either the amount of
     // people received of the amount of people who have left
     //
-    // Some countries both receive and generate asylum seekers
+    // Some countries both receive and generate vaccine_count seekers
     // in most cases the other count is much larger, and
     // each country is either mainly a receiver or originator
     // country.

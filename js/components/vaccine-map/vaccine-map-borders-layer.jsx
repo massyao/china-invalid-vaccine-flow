@@ -13,7 +13,7 @@ var getFullCount = function(counts) {
     return 0;
   }
 
-  return counts.asylumApplications;
+  return counts.vaccine_countApplications;
 };
 
 
@@ -216,7 +216,7 @@ class VaccineMapBordersLayer extends React.Component{
 
     var getMaxCount = (counts)=> {
       return _.values(counts).reduce(function(prev, item) {
-        return Math.max(prev, item.asylumApplications);
+        return Math.max(prev, item.vaccine_countApplications);
       }, 0);
     };
 

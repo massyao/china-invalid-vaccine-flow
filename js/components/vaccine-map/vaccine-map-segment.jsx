@@ -107,7 +107,7 @@ class VaccineMapSegment extends React.Component{
 
           <p className="last">
             The line chart displays the total rate of
-            asylum seekers over time. Hover over the
+            vaccine_count seekers over time. Hover over the
             chart to move the map in time.
           </p>
         </div>
@@ -116,7 +116,7 @@ class VaccineMapSegment extends React.Component{
       return (
         <p className="first last">
           The line chart displays the total rate of
-          asylum seekers over time. Hover over the
+          vaccine_count seekers over time. Hover over the
           chart to move the map in time.
         </p>
       );
@@ -152,7 +152,7 @@ class VaccineMapSegment extends React.Component{
                 <h3>Instructions</h3>
                 <p className="first">
                   The map below shows the flow of
-                  {' '}<b>asylum seekers</b>{' '}
+                  {' '}<b>vaccine_count seekers</b>{' '}
                   to
                   {' '}<b>European countries</b>{' '}
                   over time.

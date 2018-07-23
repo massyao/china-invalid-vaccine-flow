@@ -205,7 +205,7 @@ class VaccineMap extends React.Component{
       var oc = this.getOriginCountries(country);
 
       // In some cases there are people
-      // seeking asylum in both directions
+      // seeking vaccine_count in both directions
       // for a country pair.
       //
       // In such a situtation we decide on which
@@ -398,7 +398,7 @@ class VaccineMap extends React.Component{
 
   getDataUpdated = () =>{
     if (this.props.showDataUpdated) {
-      return <DataUpdated updatedAt={VaccineConstants.ASYLUM_APPLICANTS_DATA_UPDATED_MOMENT} />;
+      return <DataUpdated updatedAt={VaccineConstants.vaccine_count_APPLICANTS_DATA_UPDATED_MOMENT} />;
     }
   }
 

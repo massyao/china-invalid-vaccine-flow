@@ -24,22 +24,22 @@ class VaccineMapCountBar extends React.Component{
   updateForStamp = (stamp) =>{
     var country = this.props.country;
     var vaccineCounts = this.props.vaccineCountsModel.getTotalDestinationCounts(country, stamp);
-    var asylumBarSize = this.props.scale(vaccineCounts.asylumApplications);
+    var vaccine_countBarSize = this.props.scale(vaccineCounts.vaccine_countApplications);
     var coordinates = this.props.projection(this.props.mapModel.getCenterPointOfCountry(country));
     
     let lo = coordinates[0]-0;
     //  key point   , amormaid    some coordinates  is NaN
     coordinates = lo !== lo ? [0,0] :coordinates;
     
-   // console.log("coordinates[1] - asylumBarSize  is ",coordinates[1] - asylumBarSize);
+   // console.log("coordinates[1] - vaccine_countBarSize  is ",coordinates[1] - vaccine_countBarSize);
     //console.log("coordinates  is ",coordinates);
     
 
-    this.asylumSel
-      .attr('y', coordinates[1] - asylumBarSize)
-      .attr('height', asylumBarSize)
+    this.vaccine_countSel
+      .attr('y', coordinates[1] - vaccine_countBarSize)
+      .attr('height', vaccine_countBarSize)
       .attr('x', coordinates[0] - 2)
-      .style('display', asylumBarSize > 0 ? 'inherit' : 'none');
+      .style('display', vaccine_countBarSize > 0 ? 'inherit' : 'none');
   }
 
 
@@ -49,7 +49,7 @@ class VaccineMapCountBar extends React.Component{
 
 
   componentDidMount() {
-    this.asylumSel = d3.select(ReactDOM.findDOMNode(this.refs.asylumBar));
+    this.vaccine_countSel = d3.select(ReactDOM.findDOMNode(this.refs.vaccine_countBar));
   }
 
 
@@ -60,9 +60,9 @@ class VaccineMapCountBar extends React.Component{
     return (
       <g key={country}>
         <rect
-        ref="asylumBar"
-        key="asylum-bar"
-        className="asylum-bar"
+        ref="vaccine_countBar"
+        key="vaccine_count-bar"
+        className="vaccine_count-bar"
         width={width}
         x={0}
         height={0}
@@ -87,7 +87,7 @@ class VaccineMapCountBarsLayer extends React.Component{
 
   getTotal() {
     if (!this._total) {
-      this._total = this.props.vaccineCountsModel.getTotalDestinationCounts('DEU', moment().unix()).asylumApplications;
+      this._total = this.props.vaccineCountsModel.getTotalDestinationCounts('DEU', moment().unix()).vaccine_countApplications;
     }
     return this._total;
   }

@@ -8,7 +8,7 @@ import  vaccineConstants  from './vaccine-constants.js' ;
 
 /*
  * Provides an efficient stateless API for accessing
- * counts of asylum seekers and vaccines
+ * counts of vaccine_count seekers and vaccines
  *
  * The main backing data structure is:
  *
@@ -16,13 +16,13 @@ import  vaccineConstants  from './vaccine-constants.js' ;
  *
  * With each item having the following fields:
  *
- *   count                      count of asylum seekers during the month
- *   totalArrivedStartOfMonth   count of asylum seeksers who have arrived at start of month
- *   arrivingPerDay             asylum seekers arriving per day during the month
+ *   count                      count of vaccine_count seekers during the month
+ *   totalArrivedStartOfMonth   count of vaccine_count seeksers who have arrived at start of month
+ *   arrivingPerDay             vaccine_count seekers arriving per day during the month
  *
  */
 
-var VaccineCountsModel = function(asylumData) {
+var VaccineCountsModel = function(vaccine_countData) {
   this.destinationCountries = {};
   this.arrivedVaccinesToCountry = {};
   this.pairCountsByDestination = {};
@@ -30,8 +30,8 @@ var VaccineCountsModel = function(asylumData) {
   this.destinationCountriesWithMissingData = {};
   this.globalVaccines = [];
 
-  this._initializeDataStructures(asylumData);
-  this._addData(asylumData);
+  this._initializeDataStructures(vaccine_countData);
+  this._addData(vaccine_countData);
   this._calculateMissingData();
 };
 
@@ -157,8 +157,8 @@ VaccineCountsModel.prototype._enrichCountsArray = function (arr) {
 };
 
 /*
- * Assume that 'big' European countries should receive at least some asylum seekers from
- * the most distressed origin countries: Syria, Iraq. If there are no asylum seekers
+ * Assume that 'big' European countries should receive at least some vaccine_count seekers from
+ * the most distressed origin countries: Syria, Iraq. If there are no vaccine_count seekers
  * from these countries, assume the data is (at least partially) missing for that month.
  */
 VaccineCountsModel.prototype._calculateMissingData = function() {
@@ -211,17 +211,17 @@ VaccineCountsModel.prototype._prepareTotalCount = function(item, endStamp, debug
   var country = item;
 
   if (!country) {
-    return { asylumApplications: 0 };
+    return { vaccine_countApplications: 0 };
   } else if (!country[yearIndex]) {
     console.log('nothing found for year ' + yearIndex + ', debugInfo: ' + // eslint-disable-line
       debugInfo + ', stamp ' + endStamp);
-    return { asylumApplications: 0 };
+    return { vaccine_countApplications: 0 };
   } else {
      try{
         let  data = Math.round(country[yearIndex][monthIndex].totalArrivedAtStartOfMonth +
         dayOfMonth * country[yearIndex][monthIndex].arrivingPerDay);
        return {
-         asylumApplications: data
+         vaccine_countApplications: data
        };
      }catch(e){
         console.log(e);
@@ -250,7 +250,7 @@ VaccineCountsModel.prototype.getGlobalArrivingPerDayCounts = function(stamp) {
   var monthIndex = mom.month();
 
   return {
-    asylumApplications: this.globalVaccines && this.globalVaccines[yearIndex] && this.globalVaccines[yearIndex][monthIndex] && this.globalVaccines[yearIndex][monthIndex].arrivingPerDay
+    vaccine_countApplications: this.globalVaccines && this.globalVaccines[yearIndex] && this.globalVaccines[yearIndex][monthIndex] && this.globalVaccines[yearIndex][monthIndex].arrivingPerDay
   };
 
   //return this._prepareTotalCount(this.globalVaccines, endStamp, 'totalcount');
@@ -267,7 +267,7 @@ VaccineCountsModel.prototype.getGlobalTotalCounts = function(endStamp) {
  * given destination country at given timestamp
  *
  *  Returned in an object with fields
- *    asylumApplications - total count of asylum applications
+ *    vaccine_countApplications - total count of vaccine_count applications
  */
 VaccineCountsModel.prototype.getTotalDestinationCounts = function(countryName, endStamp) {
   return this._prepareTotalCount(this.arrivedVaccinesToCountry[countryName], endStamp, countryName);
@@ -281,7 +281,7 @@ VaccineCountsModel.prototype.getTotalDestinationCounts = function(countryName, e
 VaccineCountsModel.prototype.getOriginCountriesByStamp = function(destinationCountry, endStamp) {
   var counts = this.getDestinationCountsByOriginCountries(destinationCountry, endStamp);
   return Object.keys(counts).filter(function(country) {
-    return counts[country].asylumApplications > 0;
+    return counts[country].vaccine_countApplications > 0;
   });
 };
 
@@ -293,14 +293,14 @@ VaccineCountsModel.prototype.getOriginCountriesByStamp = function(destinationCou
 VaccineCountsModel.prototype.getDestinationCountriesByStamp = function(originCountry, endStamp) {
   var counts = this.getOriginCountsByDestinationCountries(originCountry, endStamp);
   return Object.keys(counts).filter(function(country) {
-    return counts[country].asylumApplications > 0;
+    return counts[country].vaccine_countApplications > 0;
   });
 };
 
 
 
 /*
- * Get counts of asylum seekers and vaccines who
+ * Get counts of vaccine_count seekers and vaccines who
  * have arrived at destinationCountry before endStamp
  *
  * Returned as a hash with the country code of each
@@ -319,7 +319,7 @@ VaccineCountsModel.prototype.getDestinationCountsByOriginCountries = function(de
 
 
 /*
- * Get counts of asylum seekers and vaccines who have
+ * Get counts of vaccine_count seekers and vaccines who have
  * arrived before given endStamp, and originate
  * from the given originCountry
  */

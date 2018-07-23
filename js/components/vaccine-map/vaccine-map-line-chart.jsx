@@ -26,7 +26,7 @@ class VaccineMapLineChart extends React.Component{
 
     do {
       var counts = this.props.vaccineCountsModel.getGlobalArrivingPerDayCounts(mom.unix());
-      cols.push(counts.asylumApplications);
+      cols.push(counts.vaccine_countApplications);
       xvals.push(mom.unix());
       mom.add(5, 'days');
     } while (endMoment.diff(mom) >= 0);
@@ -258,11 +258,11 @@ class VaccineMapLineChart extends React.Component{
 
   getDataMissingStartStamp =() => {
     var timestamp = moment(vaccineConstants.DATA_END_MOMENT);
-    var countriesWithMissingData = this.props.vaccineCountsModel.getDestinationCountriesWithMissingData(timestamp);
+    var countriesWithMissingData = this.props.vaccineCountsModel &&  this.props.vaccineCountsModel.getDestinationCountriesWithMissingData && this.props.vaccineCountsModel.getDestinationCountriesWithMissingData instanceof  Function  &&  this.props.vaccineCountsModel.getDestinationCountriesWithMissingData(timestamp) || [];
 
     while (countriesWithMissingData.length > 0) {
       timestamp.subtract(1, 'months');
-      countriesWithMissingData = this.props.vaccineCountsModel.getDestinationCountriesWithMissingData(timestamp);
+      countriesWithMissingData = this.props.vaccineCountsModel &&  this.props.vaccineCountsModel.getDestinationCountriesWithMissingData && this.props.vaccineCountsModel.getDestinationCountriesWithMissingData instanceof  Function  &&  this.props.vaccineCountsModel.getDestinationCountriesWithMissingData(timestamp) || [] ;
     }
 
     return timestamp.endOf('month').unix();

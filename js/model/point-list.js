@@ -7,21 +7,21 @@ import  utils  from '../utils.js' ;
 
 
 /*
- * Create list of vaccines based on given asylum and regional data
+ * Create list of vaccines based on given vaccine_count and regional data
  */
  //  amormaid
-var createFullList = function(mapModel, asylumData, peoplePerPoint, randomStartPoint, smartSpreadEnabled) {
+var createFullList = function(mapModel, vaccine_countData, peoplePerPoint, randomStartPoint, smartSpreadEnabled) {
   var ret = [];
     var  pared_contries = {}
   var skippedCountries = {};
   var skippedFutureDataCountries = {};
 
-  if (asylumData) {
-      //console.log("asylumData has elements of ",asylumData.length);
+  if (vaccine_countData) {
+      //console.log("vaccine_countData has elements of ",vaccine_countData.length);
       /*
       var  arr_sample = [];
       for(var i = 0;i<100;i++){
-          arr_sample.push(asylumData[i]); 
+          arr_sample.push(vaccine_countData[i]); 
       } */
       //console.table(arr_sample);
       
@@ -31,7 +31,7 @@ var createFullList = function(mapModel, asylumData, peoplePerPoint, randomStartP
       //   randomStartPointfalse
       //    smartSpreadEnabled  true
       //console.log(mapModel,"\n", peoplePerPoint, "\n",randomStartPoint, "\n",smartSpreadEnabled)
-    asylumData.forEach(function(item) {
+    vaccine_countData.forEach(function(item) {
       if (!mapModel.containsCountry(item.ac)) {
         skippedCountries[item.ac] = true;
       } else if (!mapModel.containsCountry(item.oc)) {

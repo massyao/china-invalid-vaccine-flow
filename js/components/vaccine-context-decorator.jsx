@@ -53,9 +53,9 @@ var bindToVaccineMapContext = function (Component) {
          }
 
          if (lucifyUtils.isSlowDevice()) {
-            return 50;
+            return 10000;
          }
-         return 25;
+         return 5000;
       }
 
 
@@ -72,7 +72,7 @@ var bindToVaccineMapContext = function (Component) {
 
          promises.push(d3.jsonAsync(assets.data('vaccine.data.json')).then(function (data) {
 // amormaid
-            this.asylumData = data;
+            this.vaccine_countData = data;
          }.bind(this)));
 
          Promise.all(promises).then(function () {
@@ -86,7 +86,7 @@ var bindToVaccineMapContext = function (Component) {
 
       createPointList = (mapModel) =>{
          return pointList.createFullList(
-            mapModel, this.asylumData, this.getPeoplePerPoint(),
+            mapModel, this.vaccine_countData, this.getPeoplePerPoint(),
             this.props.randomStartPoint, this.props.smartSpreadEnabled);
       }
 
@@ -126,7 +126,7 @@ var bindToVaccineMapContext = function (Component) {
 
       initModels=() =>{
          this.vaccinePointsModel = new VaccinePointsModel(this.pointList, this.props.randomStartPoint, this.props.smartSpreadEnabled);
-         this.vaccineCountsModel = new VaccineCountsModel(this.asylumData);
+         this.vaccineCountsModel = new VaccineCountsModel(this.vaccine_countData);
          this.progress(95);
          window.setTimeout(this.finishLoading, 15);
 
@@ -140,7 +140,7 @@ var bindToVaccineMapContext = function (Component) {
          //console.log("mapModel  is  ",this.mapModel);
          console.log("finishLoading  is called");
          this.setState({
-            asylumData: this.asylumData,
+            vaccine_countData: this.vaccine_countData,
             mapModel: this.mapModel,
             vaccinePointsModel: this.vaccinePointsModel,
             vaccineCountsModel: this.vaccineCountsModel,
@@ -150,7 +150,7 @@ var bindToVaccineMapContext = function (Component) {
          //console.log(this.state);
 
 /*         this.setState({
-            asylumData: this.asylumData,
+            vaccine_countData: this.vaccine_countData,
             mapModel: this.mapModel,
             vaccinePointsModel: this.vaccinePointsModel,
             vaccineCountsModel: this.vaccineCountsModel,
@@ -163,7 +163,7 @@ var bindToVaccineMapContext = function (Component) {
          window.vaccineCountsModel = this.vaccineCountsModel;
          window.vaccinePointsModel = this.vaccinePointsModel;
          window.mapModel = this.mapModel;
-         window.asylumData = this.asylumData;
+         window.vaccine_countData = this.vaccine_countData;
          */
       }
 
