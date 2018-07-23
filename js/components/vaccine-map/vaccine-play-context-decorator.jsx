@@ -20,8 +20,11 @@ function VaccinePlayContextDecorator (Component) {
              stamp: moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(), // unix timestamps (seconds-precision)
              speed: this.getDefaultSpeed(),
              play: true,
+             start:true
 
           };
+          
+         // console.log("VaccinePlayContextDecorator has stamp ",this.state.stamp);
        }
 
     // displayName: 'VaccinePlayContextDecorator'
@@ -67,7 +70,7 @@ function VaccinePlayContextDecorator (Component) {
 
 
     play =() =>{
-      var increment = (60 * 60 * this.state.speed);
+      var increment = (60 * 60 * this.state.speed); // amormaid  handler speed change
       var newStamp = this.stamp + increment;
 
       if (newStamp <= VaccineConstants.DATA_END_MOMENT.unix()) {
