@@ -59,9 +59,10 @@ class VaccineMainContent extends React.Component{
    //  )
    //  }
 
+   //          style={{minHeight: 800}}>
+   
     return (
-      <div className="vaccine-main-content"
-        style={{minHeight: 800}}>
+      <div className="vaccine-main-content">
           {this.getLoadingSegment()}
           {this.getMapSegment()}
       </div>

@@ -67,7 +67,7 @@ class VaccineMap extends React.Component{
       .scale(this.getWidth()*0.85)
             //  .translate([this.getWidth() / 2, this.getHeight() / 2])   
             // amormaid
-      .translate([window.innerWidth / 2, window.innerHeight / 2])
+      .translate([window.innerWidth / 2, (window.innerHeight-100)  / 2])
   }
 
 
@@ -81,7 +81,7 @@ class VaccineMap extends React.Component{
       .rotate([-lo, 0])
       .scale(this.getWidth()*this.props.scale)
       //  .translate([this.getWidth() / 2, this.getHeight() / 2])   // amormaid
-      .translate([window.innerWidth / 2, window.innerHeight / 2])
+      .translate([window.innerWidth / 2, (window.innerHeight-100)  / 2])
       .precision(1);
   }
 
@@ -96,14 +96,14 @@ class VaccineMap extends React.Component{
     // https://bl.ocks.org/mbostock/3682676
     
     //console.log("this.props.scale()  is ",this.props.scale);
-    this.props.scale = this.props.scale || 1;
+    this.props.scale = this.props.scale || 0.6;
     
     return geoProjection.geoWinkel3()
       .center([0, la])
       .rotate([-lo, 0])
       .scale(this.getWidth()*this.props.scale)
       //  .translate([this.getWidth() / 2, this.getHeight() / 2])   // amormaid
-      .translate([window.innerWidth / 2, window.innerHeight / 2])
+      .translate([window.innerWidth / 2, (window.innerHeight-100) / 2])
       .precision(1);
   }
 
@@ -420,7 +420,7 @@ class VaccineMap extends React.Component{
     }else{
        return (
           <div className="vaccine-map"
-              style={{width: window.innerWidth, height: window.innerHeight   }}>
+              style={{width: window.innerWidth, height: (window.innerHeight-100)   }}>
               {this.getFirstBordersLayer()/*  map */}
               {this.getCountBarsLayer()/*  people count  */}
               {this.getCountryLabelsLayer() /*  unknow */}
@@ -455,7 +455,7 @@ class VaccineMap extends React.Component{
 
    VaccineMap.getDefaultProps= {
       width: window.innerWidth, //width: 1200,
-      height: window.innerHeight, //height: 1200,
+      height: (window.innerHeight-100) , //height: 1200,
       interactionsEnabled: true,
       showFps: false,
       lo: 114.53,//lo: 22.2206322 + 7,

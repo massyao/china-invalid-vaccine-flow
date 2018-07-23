@@ -16,7 +16,7 @@ export default   {
     if (!this.onResize) {
       this.onResize = function() {
         this.setState({
-          window: { height: window.innerHeight, width: window.innerWidth }
+          window: { height: (window.innerHeight-100) , width: window.innerWidth }
           document: { height: document.body.clientHeight, width: document.body.clientWidth }
         });
       }.bind(this);
