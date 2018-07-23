@@ -287,6 +287,7 @@ class VaccineMapLineChart extends React.Component{
           ref='c3Chart'
           lineStrokeWidth={2}
           height={100}
+          width={window.innerWidth}
           spec={this.getSpec()}
           data={this.getData()} />
       </div>

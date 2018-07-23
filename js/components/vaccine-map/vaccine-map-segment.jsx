@@ -141,7 +141,8 @@ class VaccineMapSegment extends React.Component{
         stamp={this.props.stamp}
         vaccineCountsModel={this.props.vaccineCountsModel}
         mapModel={this.props.mapModel} />
-        
+           {
+              /*
         <Inputs>
           <div className="lucify-container">
 
@@ -175,6 +176,8 @@ class VaccineMapSegment extends React.Component{
             } />
           </div>
         </Inputs>
+           */
+           }
         
       </div>
     );

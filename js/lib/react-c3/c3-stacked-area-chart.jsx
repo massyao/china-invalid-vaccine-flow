@@ -10,6 +10,7 @@ class C3StackedAreaChart extends React.Component{
 
    constructor(props){
       super(props);
+         // console.log("C3StackedAreaChart  this.props.spec) is ",this.props.spec);
    }
   // displayName: 'C3StackedAreaChart'
 
@@ -88,7 +89,6 @@ class C3StackedAreaChart extends React.Component{
 
   getSpec = () =>{
     //var newSpec = deepcopy(this.props.spec);
-    console.log("C3StackedAreaChart  this.props.spec) is ",this.props.spec);
     var newSpec = JSON.parse(JSON.stringify(this.props.spec));
     return newSpec;
   }
