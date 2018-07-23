@@ -58,7 +58,12 @@ class VaccineMapCountryLabelsLayer extends React.Component{
   // will trigger a render as appropriate
   // key point amormaid    nextProps.originCountries is  null
   shouldComponentUpdate(nextProps, _nextState) {
-    return nextProps.country !== this.props.country || (nextProps && nextProps.originCountries && nextProps.originCountries instanceof Object && nextProps.originCountries.length !== this.props.originCountries.length )  || (nextProps && nextProps.destinationCountries && nextProps.destinationCountries instanceof Object && nextProps.destinationCountries.length !== this.props.destinationCountries.length)    || nextProps.width !== this.props.width;
+     let condition_1 = nextProps.country !== this.props.country ;
+     let condition_2 = nextProps && nextProps.originCountries && nextProps.originCountries instanceof Object && this.props.originCountries && this.props.originCountries instanceof Object && nextProps.originCountries.length !== this.props.originCountries.length  ;
+     let condition_3 = nextProps.destinationCountries && nextProps.destinationCountries instanceof Object && nextProps.destinationCountries &&  this.props.originCountries && this.props.originCountries instanceof Object && nextProps.destinationCountries.length !== this.props.destinationCountries.length ;
+     let condition_4 = nextProps.width !== this.props.width ;
+
+    return   condition_1  || condition_2  || condition_3 || condition_4 ;
   }
 
 

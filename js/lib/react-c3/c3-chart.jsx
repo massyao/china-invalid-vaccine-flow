@@ -192,7 +192,7 @@ class C3Chart extends React.Component{
       slowResizeDebounceTime: 1000,
       fastResizeDebounceTime: 500,
 
-      lineStrokeWidth: null,
+      lineStrokeWidth: 2,
       aspectRatio: 1.3, // aspectRatio = width / height
       ticksFontSize: 13,
       yTicksSpacing: 5
