@@ -1,39 +1,37 @@
 
-
 .loading {
-	display: table;
+  display: table;
 
-	.loading__img {
-		display: table-cell;
-      width:20%;
-		vertical-align: middle;
-	}
+  .loading__img {
+    display: table-cell;
+    width: 20%;
+    vertical-align: middle;
+  }
 
-	.loading__text {
-		padding-left: 1.5rem;
-		display: table-cell;
-      width:20%;
-		vertical-align: middle;
-	}
+  .loading__text {
+    padding-left: 1.5rem;
+    display: table-cell;
+    width: 20%;
+    vertical-align: middle;
+  }
 
-	img {
-		width: 5rem;
-		height: 5rem;
-		vertical-align: middle;
-	}
-   
+  img {
+    width: 5rem;
+    height: 5rem;
+    vertical-align: middle;
+  }
 
 }
 
-   .loading_project_description{
-      display:block;
-      padding-top:50px;
-      
-      h1{
-         font-size:20px;
-      }
-      div{
-         font-size:20px;
-      }
-   }
+.loading_project_description {
+  display: block;
+  padding-top: 50px;
+
+  h1 {
+    font-size: 20px;
+  }
+  div {
+    font-size: 20px;
+  }
+}
 

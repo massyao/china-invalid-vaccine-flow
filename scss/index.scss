@@ -2,7 +2,7 @@
   @if index($asset-files, $img) {
     @return "/#{$asset-path}images/#{nth($asset-files-rev,index($asset-files,$img))}";
   } @else {
-    @return "/#{$asset-path}images/#{$img}";  
+    @return "/#{$asset-path}images/#{$img}";
   }
 }
 
@@ -10,8 +10,6 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 @import 'base.scss';
-
-
 
 @import 'modules/modules.scss';
 

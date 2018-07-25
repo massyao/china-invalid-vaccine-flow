@@ -1,26 +1,26 @@
 
 .vaccine-map-country-labels-layer {
 
-	text {
-	  fill: #ffffff;
-	  opacity: 0.9;
-	  font-family: $lucify-header-font;
-	  text-anchor: middle;
-	  font-size: 12px;
-	}
+  text {
+    fill: #ffffff;
+    opacity: 0.9;
+    font-family: $lucify-header-font;
+    text-anchor: middle;
+    font-size: 12px;
+  }
 
-	.highlighted {
+  .highlighted {
 
-	}
+  }
 
-	.destination {
-		fill: #C9F0CE;
+  .destination {
+    fill: #C9F0CE;
 
-	}
+  }
 
-	.origin {
-  		fill: #FFC4D8;
-  		//fill: rgba(190, 88, 179, 1.0);
-		//fill: rgba(255, 255, 255, 0.8);
-	}
+  .origin {
+    fill: #FFC4D8;
+    //fill: rgba(190, 88, 179, 1.0);
+    //fill: rgba(255, 255, 255, 0.8);
+  }
 }

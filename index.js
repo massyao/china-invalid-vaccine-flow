@@ -7,10 +7,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./scss/index.scss";
 
-import  Vaccine_main_content from "./js/components/vaccine-main-content.js";
+import Vaccine_main_content from "./js/components/vaccine-main-content.js";
 
 //ReactDOM.render(
 ReactDOM.render(
-    <Vaccine_main_content  />, 
+    <Vaccine_main_content/>,
     document.getElementById("content")
 );

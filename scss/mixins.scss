@@ -1,14 +1,10 @@
-  
-
 @mixin lucify-body-font() {
   font-family: 'Open Sans', sans-serif;
 }
 
-
 @mixin lucify-header-font() {
   font-family: 'Montserrat', sans-serif;
 }
-
 
 @mixin lucify-body-text() {
   @include lucify-body-font();
@@ -16,12 +12,10 @@
   line-height: 1.5;
 }
 
-
 @mixin lucify-larger-text() {
   @include lucify-body-text();
   font-size: 1.3rem;
 }
-
 
 @mixin lucify-large-paragraph() {
   font-size: 1.5rem;
@@ -30,20 +24,17 @@
   letter-spacing: 0.045rem;
 }
 
-
 @mixin lucify-medium-paragraph() {
   line-height: 1.75;
   font-weight: 100;
   font-size: 1.05rem;
 }
 
-
 @mixin lucify-medium-paragraph-normal() {
   line-height: 1.75;
   font-weight: normal;
   font-size: 1.05rem;
 }
-
 
 @mixin lucify-large-title() {
   @include lucify-header-font;
@@ -55,13 +46,11 @@
   line-height: 1.5;
 }
 
-
 @mixin lucify-small-title() {
   @include lucify-header-font;
   font-weight: normal;
   font-size: 1.1rem;
 }
-
 
 @mixin lucify-medium-title() {
   @include lucify-header-font;
@@ -69,26 +58,25 @@
   font-size: 1.8rem;
 }
 
-
 @mixin lucify-gradient() {
   background-color: $lucify-gradient-start;
-  background: linear-gradient(to right, 
-    $lucify-gradient-start, 
-    $lucify-gradient-end);
+  background: linear-gradient(to right,
+          $lucify-gradient-start,
+          $lucify-gradient-end);
 }
 
 @mixin lucify-alpha-gradient() {
   background-color: $lucify-gradient-start;
-  background: linear-gradient(to right, 
-    $lucify-alpha-gradient-start, 
-    $lucify-alpha-gradient-end);
+  background: linear-gradient(to right,
+          $lucify-alpha-gradient-start,
+          $lucify-alpha-gradient-end);
 }
 
 @mixin lucify-vertical-gradient() {
   background-color: $lucify-gradient-start;
-  background: linear-gradient(to bottom, 
-    $lucify-gradient-start, 
-    $lucify-gradient-end);
+  background: linear-gradient(to bottom,
+          $lucify-gradient-start,
+          $lucify-gradient-end);
 }
 
 @mixin lucify-embed-code() {
@@ -100,8 +88,6 @@
   padding: 0.6rem;
   box-sizing: border-box;
 }
-
-
 
 @mixin vertical-align {
   position: relative;

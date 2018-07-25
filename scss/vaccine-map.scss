@@ -1,12 +1,11 @@
 
-
 .vaccine-map {
-	position: relative;
+  position: relative;
 
-	svg, canvas {
-		position: absolute;
-		top: 0px;
-	}
+  svg, canvas {
+    position: absolute;
+    top: 0px;
+  }
 }
 
 .vaccine-map {
@@ -18,16 +17,15 @@
 }
 
 .vaccine-map__loading {
-	font-family: $lucify-header-font;
-	padding: 2rem;
-	font-size: 24px;
+  font-family: $lucify-header-font;
+  padding: 2rem;
+  font-size: 24px;
 }
 
-
 .vaccine-map__overlay-layer {
-	background-color: transparent;
-	position: absolute;
-	top: 0px;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
 }
 
 

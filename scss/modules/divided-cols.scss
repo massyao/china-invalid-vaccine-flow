@@ -1,12 +1,9 @@
 
-
-
 .divided-cols__parent {
   //border: 1px solid black;
   display: table;
   width: 100%;
 }
-
 
 .divided-cols__first {
   //border: 1px solid green;
@@ -30,25 +27,21 @@
   @extend .divided-cols__parent;
 }
 
-
 .divided-cols--narrow__first {
   @extend .divided-cols__first;
   padding-right: 2.0rem;
   overflow: hidden;
 }
 
-
 .divided-cols--narrow__second {
   @extend .divided-cols__second;
   padding-left: 2.0rem;
 }
 
-
 .divided-cols--stacked {
   width: 100%;
   display: block;
 }
-
 
 .divided-cols--stacked__first {
   @extend .divided-cols__first;

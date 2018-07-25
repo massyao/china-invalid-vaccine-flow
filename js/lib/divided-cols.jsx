@@ -7,76 +7,74 @@ import React from "react";
 //import  ComponentWidthMixin  from './container-width-mixin.js' ;
 
 
+class DividedCols extends React.Component {
 
-class DividedCols extends React.Component{
+    constructor(props) {
+        super(props);
+    }
 
-   constructor(props){
-      super(props);
-   }
-
-   //// displayName = "DividedCols";
-
+    //// displayName = "DividedCols";
 
 
-   getPrefix = () =>{
-      if (this.componentWidth < this.props.breakPointStacked) {
-         return 'divided-cols--stacked__';
-      }
+    getPrefix = () => {
+        if (this.componentWidth < this.props.breakPointStacked) {
+            return 'divided-cols--stacked__';
+        }
 
-      if (this.componentWidth < this.props.breakPointNarrow) {
-         return 'divided-cols--narrow__';
-      }
+        if (this.componentWidth < this.props.breakPointNarrow) {
+            return 'divided-cols--narrow__';
+        }
 
-      return 'divided-cols__';
-   }
-
-
-   getClassName = (suffix) =>{
-      return this.getPrefix() + suffix;
-   }
+        return 'divided-cols__';
+    }
 
 
-   getFirst = () =>{
-      if (this.props.inverse && this.componentWidth < this.props.breakPointStacked) {
-         return this.props.second;
-      }
-      return this.props.first;
-   }
+    getClassName = (suffix) => {
+        return this.getPrefix() + suffix;
+    }
 
 
-   getSecond = () =>{
-      if (this.props.inverse && this.componentWidth < this.props.breakPointStacked) {
-         return this.props.first;
-      }
-      return this.props.second;
-   }
+    getFirst = () => {
+        if (this.props.inverse && this.componentWidth < this.props.breakPointStacked) {
+            return this.props.second;
+        }
+        return this.props.first;
+    }
 
 
-   render() {
-      if (!this.componentWidth) {
-         return <div />;
-      }
+    getSecond = () => {
+        if (this.props.inverse && this.componentWidth < this.props.breakPointStacked) {
+            return this.props.first;
+        }
+        return this.props.second;
+    }
 
-      return (
-         <div className={this.getClassName('parent')}>
-            <div className={this.getClassName('first')}>
-               {this.getFirst()}
+
+    render() {
+        if (!this.componentWidth) {
+            return <div/>;
+        }
+
+        return (
+            <div className={this.getClassName('parent')}>
+                <div className={this.getClassName('first')}>
+                    {this.getFirst()}
+                </div>
+                <div className={this.getClassName('second')}>
+                    {this.getSecond()}
+                </div>
             </div>
-            <div className={this.getClassName('second')}>
-               {this.getSecond()}
-            </div>
-         </div>
-      );
-   }
+        );
+    }
 }
 
-   DividedCols.getDefaultProps={
-         breakPointStacked: 700,
-         breakPointNarrow: 800,
-         inverse: false,
-         alignmentClass: 'top-xs'
-      
-   }
+DividedCols.getDefaultProps = {
+    breakPointStacked: 700,
+    breakPointNarrow: 800,
+    inverse: false,
+    alignmentClass: 'top-xs'
+
+}
 
 
 export default DividedCols;

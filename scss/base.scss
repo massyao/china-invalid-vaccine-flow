@@ -1,9 +1,8 @@
 ::-webkit-scrollbar {
-	width: 0px;
+  width: 0px;
 }
 
 $base-margin: 0.95rem;
-
 
 html {
   @include lucify-body-font();
@@ -12,7 +11,7 @@ html {
 body, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-size: 13px;
-  font-smooth: always; 
+  font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,7 +26,6 @@ img {
   border: 0px solid transparent;
 }
 
-
 .lucify-container {
   @include container-fixed;
   max-width: 1200px;
@@ -35,11 +33,10 @@ img {
   padding-left: 1.35rem;
 }
 
-
 @media(min-width: $lucify-appbar-breakpoint) {
   .lucify-container {
     padding-right: 2rem;
-    padding-left: 2rem;  
+    padding-left: 2rem;
   }
 }
 
@@ -59,7 +56,6 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 p {
   @include lucify-body-font();
@@ -87,9 +83,8 @@ a:hover {
   display: none;
 }
 
-
 .nowrap {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 

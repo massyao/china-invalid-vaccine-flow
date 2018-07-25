@@ -1,5 +1,4 @@
 
-
 .nice-form-row {
   display: table;
   width: 100%;
@@ -43,7 +42,6 @@
   vertical-align: middle;
 }
 
-
 @media(max-width: 400px) {
   .nice-form-row {
     display: block;
@@ -53,6 +51,6 @@
     padding-bottom: 1.0rem;
   }
   .nice-form-row__input {
-   display: block; 
+    display: block;
   }
 }

@@ -1,5 +1,4 @@
-
-import  moment  from 'moment' ;
+import moment from 'moment' ;
 
 // note that month indices are zero-based
 
@@ -10,8 +9,8 @@ module.exports.DATA_END_YEAR = 2017;
 module.exports.DATA_END_MONTH = 11;
 
 module.exports.DATA_END_MOMENT = moment([
-  module.exports.DATA_END_YEAR,
-  module.exports.DATA_END_MONTH]).endOf('month');
+    module.exports.DATA_END_YEAR,
+    module.exports.DATA_END_MONTH]).endOf('month');
 
 module.exports.vaccine_count_APPLICANTS_DATA_UPDATED_MOMENT = moment([2018, 1, 7]);
 

@@ -1,5 +1,4 @@
 
-
 .nice-button {
 
   cursor: pointer;
@@ -20,7 +19,6 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-
 .nice-button:hover {
   background-color: $lucify-hover-button-cyan;
 }
@@ -29,7 +27,6 @@
   background-color: $lucify-purple;
   border: 0px solid transparent;
 }
-
 
 .nice-button:disabled {
   cursor: not-allowed;
@@ -41,7 +38,6 @@
 .nice-button:focus {
   outline: 0;
 }
-
 
 .nice-button--with-icon {
   @extend .nice-button;

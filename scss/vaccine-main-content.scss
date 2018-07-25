@@ -1,14 +1,14 @@
 
 .vaccine-main-content {
 
-	.loading {
-		@include lucify-body-font();
-		margin-top: 2rem;
-		font-size: 1.4rem;
-	}
+  .loading {
+    @include lucify-body-font();
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
 
-	.inputs__instructions p {
-		max-width: 26rem;		
-	}
+  .inputs__instructions p {
+    max-width: 26rem;
+  }
 
 }

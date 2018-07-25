@@ -1,5 +1,4 @@
-
-import  utils  from './lucify-utils.jsx' ;
+import utils from './lucify-utils.jsx' ;
 
 
 /*
@@ -11,11 +10,11 @@ import  utils  from './lucify-utils.jsx' ;
  * second parameter is the time that should be used for
  * a fast device
  */
-var debounceTime = function(slowDeviceTime, fastDeviceTime) {
-  var ret = utils.isSlowDevice() ? slowDeviceTime : fastDeviceTime;
-  //console.log("debounceTime is " + ret);
-  return ret;
+var debounceTime = function (slowDeviceTime, fastDeviceTime) {
+    var ret = utils.isSlowDevice() ? slowDeviceTime : fastDeviceTime;
+    //console.log("debounceTime is " + ret);
+    return ret;
 };
 
 
-export default   debounceTime;
+export default debounceTime;

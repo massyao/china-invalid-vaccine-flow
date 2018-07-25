@@ -1,26 +1,28 @@
-import  React  from 'react' ;
+import React from 'react' ;
 
 
-class VaccineDataUpdated extends React.Component{
+class VaccineDataUpdated extends React.Component {
 
-   constructor(props){
-      super(props);
-   }
-  // displayName: 'VaccineDataUpdated'
+    constructor(props) {
+        super(props);
+    }
 
-  
+    // displayName: 'VaccineDataUpdated'
 
-  shouldComponentUpdate() {
-    return false;
-  }
 
-  render() {
-    return (
-      <div className="vaccine-updated-at">
-        Data updated<br />
-        {this.props.updatedAt.format('MMM D, YYYY')}
-      </div>
-    );
-  }
+    shouldComponentUpdate() {
+        return false;
+    }
 
-}export  default   VaccineDataUpdated;
+    render() {
+        return (
+            <div className="vaccine-updated-at">
+                Data updated<br/>
+                {this.props.updatedAt.format('MMM D, YYYY')}
+            </div>
+        );
+    }
+
+}
+
+export default VaccineDataUpdated;

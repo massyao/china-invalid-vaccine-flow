@@ -1,6 +1,4 @@
-
 @import 'bootstrap/bootstrap.scss';
-
 // not sure whether we really need materialize for anything
 //@import 'materialize/components/_color.scss';
 //@import 'materialize/components/_variables.scss';
@@ -8,13 +6,11 @@
 //.materialize {
 //  @import 'materialize/components/_form.scss';
 //}
-
 @import 'c3/main.scss';
 @import 'bourbon/_bourbon.scss';
 @import 'nouislider.scss';
 
-
 .noUi-target {
-	padding-left: 16px;
-	padding-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }

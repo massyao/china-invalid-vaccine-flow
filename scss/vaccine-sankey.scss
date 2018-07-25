@@ -1,63 +1,59 @@
-
-
 @mixin vaccine-sankey-highlight-link() {
-	//stroke: $lucify-dark-blue;
-	stroke-opacity: 0.7;
+  //stroke: $lucify-dark-blue;
+  stroke-opacity: 0.7;
 }
-
 
 .vaccine-sankey {
 
-	.node rect {
-	  
-	  //stroke-width: 1px;
-	  //stroke: $lucify-dark-blue;
-	  	
-	  fill-opacity: 0.75;
-	  fill: $lucify-muted-blue;
+  .node rect {
 
-	  shape-rendering: crispEdges;
-	}
+    //stroke-width: 1px;
+    //stroke: $lucify-dark-blue;
 
-	.node text {
-	  font-size: 13px;
-	  pointer-events: none;
-	  text-shadow: 0 1px 0 #fff;
-	
-	  .countryName {
-	  	//font-weight: bold;
-	  }
+    fill-opacity: 0.75;
+    fill: $lucify-muted-blue;
 
-	  .value {
-	  	fill: $lucify-gray-text-color;
-	  }
-	}
+    shape-rendering: crispEdges;
+  }
 
-	.node rect:hover {
-		//fill: $lucify-dark-blue;
-		fill-opacity: 1.0;
-	}
-	
-	.link {
-	  fill: none;
-	  stroke: $lucify-dark-blue;
-	  stroke-opacity: .30;
-	  transition: stroke 0.4s ease-in-out;
-	  transition: stroke-opacity 0.4s ease-in-out;
-	}
+  .node text {
+    font-size: 13px;
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
 
-	.link--unselected {
-		stroke-opacity: 0.15;
-	}
+    .countryName {
+      //font-weight: bold;
+    }
 
-	.link--hovered {
-		@include vaccine-sankey-highlight-link();
-	}
+    .value {
+      fill: $lucify-gray-text-color;
+    }
+  }
 
-	.link:hover {
-		@include vaccine-sankey-highlight-link();
-	}
-	
+  .node rect:hover {
+    //fill: $lucify-dark-blue;
+    fill-opacity: 1.0;
+  }
+
+  .link {
+    fill: none;
+    stroke: $lucify-dark-blue;
+    stroke-opacity: .30;
+    transition: stroke 0.4s ease-in-out;
+    transition: stroke-opacity 0.4s ease-in-out;
+  }
+
+  .link--unselected {
+    stroke-opacity: 0.15;
+  }
+
+  .link--hovered {
+    @include vaccine-sankey-highlight-link();
+  }
+
+  .link:hover {
+    @include vaccine-sankey-highlight-link();
+  }
 
 }
 

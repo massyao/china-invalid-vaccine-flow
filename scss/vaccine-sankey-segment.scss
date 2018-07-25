@@ -1,75 +1,67 @@
 
-
 .vaccine-sankey-segment__sankey {
-	margin-top: 0rem;
-	margin-bottom: 3rem;
+  margin-top: 0rem;
+  margin-bottom: 3rem;
 }
-
 
 .vaccine-sankey-segment {
 
-	.nice-form-row__input-value {
-		padding-left: 0rem;
-		min-width: 4.25rem;
-		text-align: right;
-	}
+  .nice-form-row__input-value {
+    padding-left: 0rem;
+    min-width: 4.25rem;
+    text-align: right;
+  }
 
-	.inputs {
-		.divided-cols--stacked__parent {	
-			.vaccine-sankey-segment__instructions {
-				display: none;
-			}
-			margin-bottom: -1rem;
-		}
-	}
+  .inputs {
+    .divided-cols--stacked__parent {
+      .vaccine-sankey-segment__instructions {
+        display: none;
+      }
+      margin-bottom: -1rem;
+    }
+  }
 }
-
-
-
 
 .vaccine-sankey-segment__metadata {
-	margin-top: 0rem;
-	margin-bottom: 0rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 
-	.divided-cols__parent {
-		margin-top: 1.5rem;
-		margin-bottom: 1.5rem;
-	}
+  .divided-cols__parent {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-	.divided-cols--narrow__parent {
-		@extend .divided-cols__parent;
-	}
+  .divided-cols--narrow__parent {
+    @extend .divided-cols__parent;
+  }
 
-	.divided-cols--stacked__parent {
-		margin-top: 1.0rem;
-		margin-bottom: 1.0rem;
-	}
+  .divided-cols--stacked__parent {
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+  }
 
-	.divided-cols__first {
-		vertical-align: middle;
-	}
+  .divided-cols__first {
+    vertical-align: middle;
+  }
 
-	.divided-cols__second {
-		 vertical-align: middle;
-		 border-left: 0px dotted #c8cacc;
-	}
+  .divided-cols__second {
+    vertical-align: middle;
+    border-left: 0px dotted #c8cacc;
+  }
 
-	.divided-cols--stacked__first {
-		margin-bottom: 0.4rem;
-	}
+  .divided-cols--stacked__first {
+    margin-bottom: 0.4rem;
+  }
 }
 
-
-
-
 .vaccine-sankey-segment__time-title {
-	@include lucify-header-font();
-	font-size: 1.0rem;
+  @include lucify-header-font();
+  font-size: 1.0rem;
 }
 
 .vaccine-sankey-segment__missing-countries p {
-	@include lucify-medium-paragraph();
-	font-size: 0.9rem;
-	max-width: 90%;
+  @include lucify-medium-paragraph();
+  font-size: 0.9rem;
+  max-width: 90%;
 }
 
