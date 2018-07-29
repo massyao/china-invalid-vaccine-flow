@@ -217,7 +217,7 @@ VaccineCountsModel.prototype._prepareTotalCount = function (item, endStamp, debu
     var yearIndex = mom.year() - vaccineConstants.DATA_START_YEAR;
     var monthIndex = mom.month();
     var country = item;
-
+//console.log("country is ",country);
     if (!country) {
         return {vaccine_countApplications: 0};
     } else if (!country[yearIndex]) {

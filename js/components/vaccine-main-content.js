@@ -21,12 +21,15 @@ class VaccineMainContent extends React.Component {
     // displayName: 'VaccineMainContent'
 
     getMapSegment = () => {
+
         return (
             <HideableContainer visible={this.props.loaded}>
                 <VaccineMapSegment {...this.props} />
             </HideableContainer>
 
         );
+        
+        
     }
 
 

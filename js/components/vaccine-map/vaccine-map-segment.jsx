@@ -48,43 +48,20 @@ class VaccineMapSegment extends React.Component {
 
 
     getPeoplePerPointText = () => {
-        if (this.props.peoplePerPoint == 25) {
-            return (
-                <span>
-          Each moving point on the map represents
-          25 people. That corresponds to approximately
-          one busload with every other seat taken.
-        </span>
-            );
+
+        if (lucifyUtils.isSlowDevice()) {
+            return   <span>  Each moving point on the map represents10000 vaccines.  </span>;
+        }else{
+            return    <span> Each moving point on the map represents  5000 vaccines.  </span>;
         }
 
-        if (this.props.peoplePerPoint == 50) {
-            return (
-                <span>
-          Each moving point on the map represents
-          50 people. That corresponds to approximately
-          one busload with no empty seats.
-        </span>
-            );
-        }
-
-        return (
-            <span>
-        Each moving point on the map corresponds
-        to {this.props.peoplePerPoint} people.
-      </span>
-        );
     }
 
 
     getCountsInstruction = () => {
         if (vaccineConstants.labelShowBreakPoint < this.componentWidth) {
             return (
-                <span>
-          The counts shown on hover represent the number
-          of people who have left or arrived in a country
-          since 2012.
-        </span>
+                <span> The counts shown on hover represent the number  of vaccine that flows in and out since 2012.</span>
             );
         }
         return null;

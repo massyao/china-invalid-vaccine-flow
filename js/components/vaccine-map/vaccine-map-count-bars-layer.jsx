@@ -80,10 +80,12 @@ class VaccineMapCountBarsLayer extends React.Component {
 
 
     getTotal() {
+       //console.log("this.props.vaccineCountsModel.getTotalDestinationCounts is ",this.props.vaccineCountsModel.getTotalDestinationCounts);
         if (!this._total) {
-            this._total = this.props.vaccineCountsModel.getTotalDestinationCounts('DEU', moment().unix()).vaccine_countApplications;
+            this._total = this.props.vaccineCountsModel.getTotalDestinationCounts('河南', moment().unix()).vaccine_countApplications;
         }
-        return this._total;
+        console.log("this._total is",this._total);
+        return  this._total;
     }
 
 
@@ -92,13 +94,14 @@ class VaccineMapCountBarsLayer extends React.Component {
         // lead and we use the current map projection+position
         return d3.scale.linear()
             .domain([0, this.getTotal()])
-            .range([0, this.props.height * 0.2]);
+            .range([0, this.props.height * 0.1]); // 0.2
     }
 
 
     getBarItems() {
         var items = [];
         var countries = this.props.vaccineCountsModel.getDestinationCountries();
+        //console.log("vaccineCountsModel.getDestinationCountries are ",countries);
 
         var props = {
             vaccineCountsModel: this.props.vaccineCountsModel,
