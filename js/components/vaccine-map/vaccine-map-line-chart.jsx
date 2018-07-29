@@ -6,6 +6,8 @@ import vaccineConstants from '../../model/vaccine-constants.js' ;
 import moment from 'moment' ;
 import d3 from 'd3' ;
 
+//console.log("vaccineConstants is",vaccineConstants);
+
 
 class VaccineMapLineChart extends React.Component {
 
@@ -16,7 +18,9 @@ class VaccineMapLineChart extends React.Component {
     // displayName: 'VaccineMapLineChart'
 
 
-    getData() {
+    getData = ()=> {
+     //console.log("moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(), is ",moment([ .DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(),);
+     console.log("vaccineConstants is ",vaccineConstants);
         var mom = moment([vaccineConstants.DATA_START_YEAR, vaccineConstants.DATA_START_MONTH]);
         var endMoment = vaccineConstants.DATA_END_MOMENT;
         var cols = [];
@@ -43,7 +47,7 @@ class VaccineMapLineChart extends React.Component {
             onclick: this.handleOnClick,
             regions: {
                 'data1': [{
-                    start: this.getDataMissingStartStamp(),
+                    start: this.getDataMissingStartStamp(),//  data start point
                     end: vaccineConstants.DATA_END_MOMENT.unix(),
                     style: 'dashed'
                 }]
@@ -68,7 +72,7 @@ class VaccineMapLineChart extends React.Component {
     }
 
 
-    updateLine(stamp) {
+    updateLine =(stamp)=> {
         var chart = this.refs.c3Chart && this.refs.c3Chart.chart;
 
         if (!this.lineSel) {
@@ -127,10 +131,10 @@ class VaccineMapLineChart extends React.Component {
                     }
                     missingDataText += countriesWithMissingData[length - 1];
                 }
-
+               // amormaid  display no missingDataText
                 res = {
                     title: 'Missing data for ' + countriesWithMissingData.join(', '),
-                    text: missingDataText
+                    text: " " || missingDataText
                 };
 
             } else {
@@ -149,7 +153,7 @@ class VaccineMapLineChart extends React.Component {
     }
 
 
-    updatePosition(d) {
+    updatePosition = (d)=> {
         this.updateLine(d.x);
         if (this.props.onMouseOver) {
             this.props.onMouseOver(d.x);
@@ -188,6 +192,7 @@ class VaccineMapLineChart extends React.Component {
 
 
     handleMouseOverChart = (d) => {
+       // d is this.d     ,means  timestamp data
         this.d = d;
 
         // use a simple timing logic to ignore occasions where
@@ -259,7 +264,6 @@ class VaccineMapLineChart extends React.Component {
             timestamp.subtract(1, 'months');
             countriesWithMissingData = this.props.vaccineCountsModel && this.props.vaccineCountsModel.getDestinationCountriesWithMissingData && this.props.vaccineCountsModel.getDestinationCountriesWithMissingData instanceof Function && this.props.vaccineCountsModel.getDestinationCountriesWithMissingData(timestamp) || [];
         }
-
         return timestamp.endOf('month').unix();
     }
 

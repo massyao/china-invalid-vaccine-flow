@@ -64,6 +64,7 @@ VaccineCountsModel.prototype._initializeDataStructures = function (data) {
 
 
 VaccineCountsModel.prototype._prepareYearsMonthsArray = function (initialDataGenerator) {
+   //console.log("VaccineCountsModel.prototype._prepareYearsMonthsArray is ",vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
     var ret = new Array(vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
     for (var y = 0; y < ret.length; y++) {
         ret[y] = new Array(12);
@@ -134,6 +135,7 @@ VaccineCountsModel.prototype._calculateMonthlyVaccineSums = function () {
 // Adds the totalArrivedAtStartOfMonth and arrivingPerDay
 // properties to each item in the given array
 VaccineCountsModel.prototype._enrichYearsMonthsArray = function (country) {
+
     country[0][0].totalArrivedAtStartOfMonth = 0;
     country[0][0].arrivingPerDay = country[0][0].count / utils.daysInMonth(0, vaccineConstants.DATA_START_YEAR);
     for (var year = 0; year < country.length; year++) {
@@ -180,7 +182,6 @@ VaccineCountsModel.prototype._calculateMissingData = function () {
     for (var month = 0; month < 12; month++) {
         yearsToCheck.forEach(function (year) {
             var yearIndex = year - vaccineConstants.DATA_START_YEAR;
-
             destinationCountriesToCheck.forEach(function (destinationCountry) {
                 var countryData = this.pairCountsByDestination[destinationCountry];
 
@@ -345,10 +346,12 @@ VaccineCountsModel.prototype.getDestinationCountries = function () {
 
 
 VaccineCountsModel.prototype.getDestinationCountriesWithMissingData = function (timestamp) {
+    //console.log("VaccineCountsModel.prototype._addMonthlyArrivals 777");
     if (timestamp.isAfter(vaccineConstants.DATA_END_MOMENT)) {
         console.log('trying to get data past end moment: ' + timestamp.format()); // eslint-disable-line
         timestamp = vaccineConstants.DATA_END_MOMENT;
     }
+    //console.log("VaccineCountsModel.prototype._addMonthlyArrivals 888");
     var yearIndex = timestamp.year() - vaccineConstants.DATA_START_YEAR;
     var monthIndex = timestamp.month();
     return this.destinationCountriesWithMissingData && this.destinationCountriesWithMissingData[yearIndex] && this.destinationCountriesWithMissingData[yearIndex][monthIndex];

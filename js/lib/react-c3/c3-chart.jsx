@@ -130,9 +130,12 @@ class C3Chart extends React.Component {
 
 
     componentDidMount = () => {
-        // console.log("this.props.spec is ",this.props.spec);
+        //console.log("C3Chart props.spec is ",JSON.stringify(this.props.spec));
+        console.log("C3Chart props.spec is ",this.props.spec);
 
         var fullSpec = JSON.parse(JSON.stringify(this.props.spec));
+        
+        
 
         // TODO: use ReactDOM once we upgrade to React 0.14
         //console.log("this.refs  is ",this.refs);
@@ -146,7 +149,7 @@ class C3Chart extends React.Component {
 
         // fullSpec.onrendered = this.onRendered;
 
-        console.log("fullSpec is ", fullSpec);
+       // console.log("fullSpec is ", fullSpec);
 
         this.chart = c3.generate(fullSpec);
         console.log("this.chart  is ", this.chart);

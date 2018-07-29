@@ -15,8 +15,10 @@ function VaccinePlayContextDecorator(Component) {
         constructor(props) {
             super(props);
             //console.log("VaccinePlayContextDecorator  has props ",props);
+            console.log("moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(),",moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(),);
+            // amormaid  key point    x-axis start point
             this.state = {
-                stamp: moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(), // unix timestamps (seconds-precision)
+                stamp: moment([2017,1,1]).unix() || moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(), // unix timestamps (seconds-precision)
                 speed: this.getDefaultSpeed(),
                 play: true,
                 start: true
