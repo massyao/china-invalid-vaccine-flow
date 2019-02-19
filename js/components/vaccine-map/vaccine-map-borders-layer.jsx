@@ -2,7 +2,7 @@ import React from 'react' ;
 import ReactDOM from "react-dom";
 import d3 from 'd3' ;
 import _ from 'underscore' ;
-import sprintf from 'sprintf' ;
+import sprintf from 'sprintf-js' ;
 //import  console  from 'console-browserify' ;
 
 
