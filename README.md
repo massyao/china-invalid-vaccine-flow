@@ -6,3 +6,6 @@
 在线演示地址： http://www.china-invalid-vaccine-flow.cf
 <img src="https://i.loli.net/2018/07/29/5b5dd1042c5d0.jpg" alt=" bg2.jpg"/>
 目前缺乏详细的流向数据，个人会持续关注并更新数据，也希望关注这个事件的朋友寻找数据，让这个事件更加清楚
+
+
+inspired by https://github.com/lucified/lucify-refugees
