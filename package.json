@@ -1,6 +1,6 @@
 {
-  "name": "CRD4900",
-  "version": "1.0.1",
+  "name": "aussie-migration-flow",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -26,8 +26,8 @@
     "polygon": "^1.0.2",
     "query-string": "^2.4.2",
     "randgen": "^0.1.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "sha.js": "^2.4.11",
     "sprintf": "^0.1.5",
     "topojson": "^3.0.2",
@@ -50,12 +50,12 @@
     "ify-loader": "^1.1.0",
     "node-sass": "^4.7.2",
     "path": "^0.12.7",
-    "sass-loader": "^6.0.7",
+    "sass-loader": "^7.0.1",
     "simplify-geojson": "^1.0.2",
-    "style-loader": "^0.20.2",
+    "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
-    "webpack": "4.1.0",
-    "webpack-cli": "2.0.10",
-    "webpack-dev-server": "3.1.0"
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   }
 }
