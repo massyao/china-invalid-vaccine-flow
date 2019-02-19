@@ -61,13 +61,14 @@ var bindToVaccineMapContext = function (Component) {
         componentDidMount() {
             console.time('load json'); // eslint-disable-line
             var promises = [];
-            // promises.push(d3.jsonAsync(assets.data('topomap.json')).then(function(data) {
-            promises.push(d3.jsonAsync(assets.data('chinamap.topo.json')).then(function (data) {
+            promises.push(d3.jsonAsync(assets.data('topomap.json')).then(function(data) {
+            // promises.push(d3.jsonAsync(assets.data('chinamap.topo.json')).then(function (data) {
                 //console.log(data);
                 this.topomap = data;
             }.bind(this)));
 
-            promises.push(d3.jsonAsync(assets.data('vaccine.data.json')).then(function (data) {
+            // promises.push(d3.jsonAsync(assets.data('vaccine.data.json')).then(function (data) {
+            promises.push(d3.jsonAsync(assets.data('asylum.json')).then(function (data) {
 // amormaid
                 this.vaccine_countData = data;
             }.bind(this)));
