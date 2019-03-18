@@ -1,7 +1,7 @@
 import React from 'react' ;
 import _ from 'underscore' ;
 
-import vaccineConstants from '../../model/vaccine-constants.js' ;
+import vaccineConstants from '../../model/constants.js' ;
 
 
 class VaccineMapCountryLabelsLayer extends React.Component {

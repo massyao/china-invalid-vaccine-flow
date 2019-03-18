@@ -2,7 +2,7 @@ import moment from 'moment' ;
 import utils from '../utils.js' ;
 import console from 'console-browserify' ;
 
-import vaccineConstants from './vaccine-constants.js' ;
+import vaccineConstants from './constants.js' ;
 
 
 /*

@@ -20,7 +20,7 @@ import lucifyUtils from '../../lib/lucify-utils.jsx' ;
 import VaccineMap from './responsive-map.jsx' ;
 import VaccinePlayContextDecorator from './play-context-decorator.jsx' ;
 import TimeLayer from './map-time-layer.jsx' ;
-import vaccineConstants from '../../model/vaccine-constants.js' ;
+import vaccineConstants from '../../model/constants.js' ;
 
 //console.log(VaccinePlayContextDecorator);
 

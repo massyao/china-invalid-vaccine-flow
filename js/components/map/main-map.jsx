@@ -13,7 +13,7 @@ import SimpleBordersLayer from './map-simple-borders-layer.jsx' ;
 import FrameRateLayer from './frame-rate-layer.jsx' ;
 //import  VaccineHighlightMixin  from './vaccine-highlight-mixin.js' ;
 import DataUpdated from '../data-updated.jsx' ;
-import VaccineConstants from '../../model/vaccine-constants.js' ;
+import VaccineConstants from '../../model/constants.js' ;
 
 //import  lucifyUtils  from 'lucify-commons/src/js/lucify-utils.jsx' ;
 import lucifyUtils from '../../lib/lucify-utils.jsx' ;

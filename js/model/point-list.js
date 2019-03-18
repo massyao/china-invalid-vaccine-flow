@@ -1,7 +1,7 @@
 import moment from 'moment' ;
 
-import Vaccine from './vaccine.js' ;
-import VaccineConstants from './vaccine-constants.js' ;
+import Vaccine from './model.js' ;
+import VaccineConstants from './constants.js' ;
 import utils from '../utils.js' ;
 
 

@@ -5,7 +5,7 @@ import moment from 'moment' ;
 import lucifyUtils from '../../lib/lucify-utils.jsx' ;
 
 
-import VaccineConstants from '../../model/vaccine-constants.js' ;
+import VaccineConstants from '../../model/constants.js' ;
 
 function VaccinePlayContextDecorator(Component) {
 

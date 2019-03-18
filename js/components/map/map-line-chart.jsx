@@ -2,7 +2,7 @@ import React from 'react' ;
 import ReactDOM from "react-dom";
 //import  C3Chart  from 'lucify-commons/src/js/components/react-c3/c3-chart.jsx' ;
 import C3Chart from '../../lib/react-c3/c3-chart.jsx' ;
-import vaccineConstants from '../../model/vaccine-constants.js' ;
+import vaccineConstants from '../../model/constants.js' ;
 import moment from 'moment' ;
 import d3 from 'd3' ;
 

@@ -5,8 +5,8 @@ import React from 'react' ;
 import console from 'console-browserify' ;
 import Promise from 'bluebird' ;
 
-import VaccineCountsModel from '../model/vaccine-counts-model.js' ;
-import VaccinePointsModel from '../model/vaccine-points-model.js' ;
+import VaccineCountsModel from '../model/counts-model.js' ;
+import VaccinePointsModel from '../model/points-model.js' ;
 import pointList from '../model/point-list.js' ;
 import MapModel from '../model/map-model.js' ;
 
