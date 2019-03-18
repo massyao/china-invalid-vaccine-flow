@@ -2,8 +2,8 @@ import React from 'react' ;
 
 //import  HideableContainer  from 'lucify-commons/src/js/components/hideable-container.jsx' ;
 import HideableContainer from '../lib/hideable-container.jsx' ;
-import Decorator from './vaccine-context-decorator.jsx' ;
-import VaccineMapSegment from './vaccine-map/vaccine-map-segment.jsx' ;
+import Decorator from './context-decorator.jsx' ;
+import VaccineMapSegment from './map/map-segment.jsx' ;
 //import  VaccineSankeySegment  from './vaccine-sankey/vaccine-sankey-segment.jsx' ;
 //import  VaccineSoccerSegment  from './vaccine-soccer/vaccine-soccer-segment.jsx' ;
 

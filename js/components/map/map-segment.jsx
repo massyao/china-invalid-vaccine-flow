@@ -17,9 +17,9 @@ import lucifyUtils from '../../lib/lucify-utils.jsx' ;
 //import  ComponentWidthMixin  from '../../lib/container-width-mixin.js' ;
 
 
-import VaccineMap from './responsive-vaccine-map.jsx' ;
-import VaccinePlayContextDecorator from './vaccine-play-context-decorator.jsx' ;
-import TimeLayer from './vaccine-map-time-layer.jsx' ;
+import VaccineMap from './responsive-map.jsx' ;
+import VaccinePlayContextDecorator from './play-context-decorator.jsx' ;
+import TimeLayer from './map-time-layer.jsx' ;
 import vaccineConstants from '../../model/vaccine-constants.js' ;
 
 //console.log(VaccinePlayContextDecorator);

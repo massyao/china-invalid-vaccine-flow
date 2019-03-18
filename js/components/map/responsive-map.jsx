@@ -1,5 +1,5 @@
 import React from 'react' ;
-import VaccineMap from './vaccine-map.jsx' ;
+import VaccineMap from './main-map.jsx' ;
 
 //import  ComponentWidthMixin  from 'lucify-commons/src/js/components/container-width-mixin.js' ;
 //import  ComponentWidthMixin  from '../../lib/container-width-mixin.js' ;

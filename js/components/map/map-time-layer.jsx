@@ -1,6 +1,6 @@
 import React from 'react' ;
 
-import VaccineMapLineChart from './vaccine-map-line-chart.jsx' ;
+import VaccineMapLineChart from './map-line-chart.jsx' ;
 
 class VaccineMapTimeLayer extends React.Component {
 
