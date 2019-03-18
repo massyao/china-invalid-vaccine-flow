@@ -14,7 +14,7 @@ module.exports.DATA_END_MOMENT = moment([
     module.exports.DATA_END_YEAR,
     module.exports.DATA_END_MONTH]).endOf('month');
 
-module.exports.vaccine_count_APPLICANTS_DATA_UPDATED_MOMENT = moment([2018, 1, 7]);
+module.exports.APPLICANTS_DATA_UPDATED_MOMENT = moment([2018, 1, 7]);
 
 module.exports.disableLabels = ['BIH', 'MKD', 'ALB', 'LUX', 'MNE', 'ARM', 'AZE', 'LBN'];
 

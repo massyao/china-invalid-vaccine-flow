@@ -80,11 +80,11 @@ class VaccineMapCountBarsLayer extends React.Component {
 
 
     getTotal() {
-       //console.log("this.props.vaccineCountsModel.getTotalDestinationCounts is ",this.props.vaccineCountsModel.getTotalDestinationCounts);
+        // console.log("this.props.vaccineCountsModel.getTotalDestinationCounts is ",this.props.vaccineCountsModel.getTotalDestinationCounts);
         if (!this._total) {
-            this._total = this.props.vaccineCountsModel.getTotalDestinationCounts('河南', moment().unix()).vaccine_countApplications;
+            this._total = this.props.vaccineCountsModel.getTotalDestinationCounts('DEU', moment().unix()).vaccine_countApplications;
         }
-        console.log("this._total is",this._total);
+        // console.log("this._total is",this._total);
         return  this._total;
     }
 

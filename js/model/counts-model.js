@@ -21,7 +21,7 @@ import vaccineConstants from './constants.js' ;
  *
  */
 
-var VaccineCountsModel = function (vaccine_countData) {
+var CountsModel = function (vaccine_countData) {
     this.destinationCountries = {};
     this.arrivedVaccinesToCountry = {};
     this.pairCountsByDestination = {};
@@ -40,7 +40,7 @@ var VaccineCountsModel = function (vaccine_countData) {
 // ------------------------------------------
 //
 
-VaccineCountsModel.prototype._initializeDataStructures = function (data) {
+CountsModel.prototype._initializeDataStructures = function (data) {
     //  console.log(data && data instanceof  Object && data.length);
     this.globalVaccines = this._prepareYearsMonthsArray(function () {
         return {count: 0};
@@ -63,8 +63,8 @@ VaccineCountsModel.prototype._initializeDataStructures = function (data) {
 };
 
 
-VaccineCountsModel.prototype._prepareYearsMonthsArray = function (initialDataGenerator) {
-   //console.log("VaccineCountsModel.prototype._prepareYearsMonthsArray is ",vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
+CountsModel.prototype._prepareYearsMonthsArray = function (initialDataGenerator) {
+   //console.log("CountsModel.prototype._prepareYearsMonthsArray is ",vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
     var ret = new Array(vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
     for (var y = 0; y < ret.length; y++) {
         ret[y] = new Array(12);
@@ -76,7 +76,7 @@ VaccineCountsModel.prototype._prepareYearsMonthsArray = function (initialDataGen
 };
 
 
-VaccineCountsModel.prototype._ensurePairInitialized = function (pc, dim1, dim2) {
+CountsModel.prototype._ensurePairInitialized = function (pc, dim1, dim2) {
     if (!pc[dim1]) {
         pc[dim1] = {};
     }
@@ -88,7 +88,7 @@ VaccineCountsModel.prototype._ensurePairInitialized = function (pc, dim1, dim2) 
 };
 
 
-VaccineCountsModel.prototype._addData = function (data) {
+CountsModel.prototype._addData = function (data) {
     data.forEach(function (item) {
         this._addMonthlyArrivals(item.ac, item.oc, item.year, item.month, item.count);
         this.destinationCountries[item.ac] = true;
@@ -98,7 +98,7 @@ VaccineCountsModel.prototype._addData = function (data) {
 };
 
 
-VaccineCountsModel.prototype._addMonthlyArrivals = function (destinationCountry, originCountry, year, month, count) {
+CountsModel.prototype._addMonthlyArrivals = function (destinationCountry, originCountry, year, month, count) {
     if (year < vaccineConstants.DATA_START_YEAR) return;
 
     var yearIndex = year - vaccineConstants.DATA_START_YEAR;
@@ -116,7 +116,7 @@ VaccineCountsModel.prototype._addMonthlyArrivals = function (destinationCountry,
 };
 
 
-VaccineCountsModel.prototype._calculateMonthlyVaccineSums = function () {
+CountsModel.prototype._calculateMonthlyVaccineSums = function () {
     this._enrichYearsMonthsArray(this.globalVaccines);
     this._enrichCountsArray(this.arrivedVaccinesToCountry);
 
@@ -134,7 +134,7 @@ VaccineCountsModel.prototype._calculateMonthlyVaccineSums = function () {
 
 // Adds the totalArrivedAtStartOfMonth and arrivingPerDay
 // properties to each item in the given array
-VaccineCountsModel.prototype._enrichYearsMonthsArray = function (country) {
+CountsModel.prototype._enrichYearsMonthsArray = function (country) {
 
     country[0][0].totalArrivedAtStartOfMonth = 0;
     country[0][0].arrivingPerDay = country[0][0].count / utils.daysInMonth(0, vaccineConstants.DATA_START_YEAR);
@@ -159,7 +159,7 @@ VaccineCountsModel.prototype._enrichYearsMonthsArray = function (country) {
 };
 
 
-VaccineCountsModel.prototype._enrichCountsArray = function (arr) {
+CountsModel.prototype._enrichCountsArray = function (arr) {
     for (var countryName in arr) {
         this._enrichYearsMonthsArray(arr[countryName]);
     }
@@ -170,13 +170,13 @@ VaccineCountsModel.prototype._enrichCountsArray = function (arr) {
  * the most distressed origin countries: Syria, Iraq. If there are no vaccine_count seekers
  * from these countries, assume the data is (at least partially) missing for that month.
  */
-VaccineCountsModel.prototype._calculateMissingData = function () {
+CountsModel.prototype._calculateMissingData = function () {
     // amormaid
-    var destinationCountriesToCheck = [  'AUT', 'BEL', 'BGR', 'CHE', 'DEU', 'DNK', 'ESP', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 'ITA', 'NOR', 'NLD', 'SWE'];
-    // var destinationCountriesToCheck = [
-    //     '广东', '香港', '福建', '江苏', '浙江', '北京', '山东', '澳门'
-    // ];
-    var originCountriesToCheck = ['北京'];
+    var destinationCountriesToCheck = [
+        'AUT', 'BEL', 'BGR', 'CHE', 'DEU', 'DNK', 'ESP', 'FIN',
+        'FRA', 'GBR', 'GRC', 'HUN', 'ITA', 'NOR', 'NLD', 'SWE'
+    ];
+    var originCountriesToCheck = ['SYR', 'IRQ', 'UKR'];
     var yearsToCheck = [2016, 2017]; // TODO: remove 2016 once it has all the data
 
     for (var month = 0; month < 12; month++) {
@@ -206,7 +206,7 @@ VaccineCountsModel.prototype._calculateMissingData = function () {
 // -----------------
 //
 
-VaccineCountsModel.prototype._prepareTotalCount = function (item, endStamp, debugInfo) {
+CountsModel.prototype._prepareTotalCount = function (item, endStamp, debugInfo) {
     var mom = moment(new Date(endStamp * 1000));
 
     if (mom.isAfter(vaccineConstants.DATA_END_MOMENT)) {
@@ -246,7 +246,7 @@ VaccineCountsModel.prototype._prepareTotalCount = function (item, endStamp, debu
 //
 
 
-VaccineCountsModel.prototype.getGlobalArrivingPerDayCounts = function (stamp) {
+CountsModel.prototype.getGlobalArrivingPerDayCounts = function (stamp) {
 
     var mom = moment(new Date(stamp * 1000));
     if (mom.isAfter(vaccineConstants.DATA_END_MOMENT)) {
@@ -264,7 +264,7 @@ VaccineCountsModel.prototype.getGlobalArrivingPerDayCounts = function (stamp) {
 };
 
 
-VaccineCountsModel.prototype.getGlobalTotalCounts = function (endStamp) {
+CountsModel.prototype.getGlobalTotalCounts = function (endStamp) {
     return this._prepareTotalCount(this.globalVaccines, endStamp, 'totalcount');
 };
 
@@ -275,7 +275,7 @@ VaccineCountsModel.prototype.getGlobalTotalCounts = function (endStamp) {
  *  Returned in an object with fields
  *    vaccine_countApplications - total count of vaccine_count applications
  */
-VaccineCountsModel.prototype.getTotalDestinationCounts = function (countryName, endStamp) {
+CountsModel.prototype.getTotalDestinationCounts = function (countryName, endStamp) {
     return this._prepareTotalCount(this.arrivedVaccinesToCountry[countryName], endStamp, countryName);
 };
 
@@ -284,7 +284,7 @@ VaccineCountsModel.prototype.getTotalDestinationCounts = function (countryName, 
  * Get countries that have originated vaccines for the given
  * destination country before the given timestamp
  */
-VaccineCountsModel.prototype.getOriginCountriesByStamp = function (destinationCountry, endStamp) {
+CountsModel.prototype.getOriginCountriesByStamp = function (destinationCountry, endStamp) {
     var counts = this.getDestinationCountsByOriginCountries(destinationCountry, endStamp);
     return Object.keys(counts).filter(function (country) {
         return counts[country].vaccine_countApplications > 0;
@@ -296,7 +296,7 @@ VaccineCountsModel.prototype.getOriginCountriesByStamp = function (destinationCo
  * Get destination countries for vaccines originating from the given
  * origin country before the given timestamp
  */
-VaccineCountsModel.prototype.getDestinationCountriesByStamp = function (originCountry, endStamp) {
+CountsModel.prototype.getDestinationCountriesByStamp = function (originCountry, endStamp) {
     var counts = this.getOriginCountsByDestinationCountries(originCountry, endStamp);
     return Object.keys(counts).filter(function (country) {
         return counts[country].vaccine_countApplications > 0;
@@ -311,7 +311,7 @@ VaccineCountsModel.prototype.getDestinationCountriesByStamp = function (originCo
  * Returned as a hash with the country code of each
  * origin country as key
  */
-VaccineCountsModel.prototype.getDestinationCountsByOriginCountries = function (destinationCountry, endStamp) {
+CountsModel.prototype.getDestinationCountsByOriginCountries = function (destinationCountry, endStamp) {
     var ret = {};
     var pairCounts = this.pairCountsByDestination[destinationCountry];
     if (pairCounts) {
@@ -328,7 +328,7 @@ VaccineCountsModel.prototype.getDestinationCountsByOriginCountries = function (d
  * arrived before given endStamp, and originate
  * from the given originCountry
  */
-VaccineCountsModel.prototype.getOriginCountsByDestinationCountries = function (originCountry, endStamp) {
+CountsModel.prototype.getOriginCountsByDestinationCountries = function (originCountry, endStamp) {
     var ret = {};
     var pairCounts = this.pairCountsByOrigin[originCountry];
     if (pairCounts) {
@@ -340,22 +340,22 @@ VaccineCountsModel.prototype.getOriginCountsByDestinationCountries = function (o
 };
 
 
-VaccineCountsModel.prototype.getDestinationCountries = function () {
+CountsModel.prototype.getDestinationCountries = function () {
     return Object.keys(this.destinationCountries);
 };
 
 
-VaccineCountsModel.prototype.getDestinationCountriesWithMissingData = function (timestamp) {
-    // console.log("VaccineCountsModel.prototype._addMonthlyArrivals 777");
+CountsModel.prototype.getDestinationCountriesWithMissingData = function (timestamp) {
+    // console.log("CountsModel.prototype._addMonthlyArrivals 777");
     if (timestamp.isAfter(vaccineConstants.DATA_END_MOMENT)) {
         // console.log('trying to get data past end moment: ' + timestamp.format()); // eslint-disable-line
         timestamp = vaccineConstants.DATA_END_MOMENT;
     }
-    //console.log("VaccineCountsModel.prototype._addMonthlyArrivals 888");
+    //console.log("CountsModel.prototype._addMonthlyArrivals 888");
     var yearIndex = timestamp.year() - vaccineConstants.DATA_START_YEAR;
     var monthIndex = timestamp.month();
     return this.destinationCountriesWithMissingData && this.destinationCountriesWithMissingData[yearIndex] && this.destinationCountriesWithMissingData[yearIndex][monthIndex];
 };
 
-// console.log("VaccineCountsModel is ", VaccineCountsModel);
-export default VaccineCountsModel;
+// console.log("CountsModel is ", CountsModel);
+export default CountsModel;

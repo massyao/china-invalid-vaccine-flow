@@ -50,6 +50,7 @@ class VaccineMapBorder extends React.Component {
         var fillStyle = null;
 
         if (this.props.origin && getFullCount(details.originCounts) > 0) {
+            console.log('details.originScale(getFullCount(details.originCounts))', details.originScale(getFullCount(details.originCounts)))
             fillStyle = sprintf('rgba(190, 88, 179, %.2f)', details.originScale(getFullCount(details.originCounts)));
         } else if (this.props.destination && getFullCount(details.destinationCounts) > 0) {
             fillStyle = sprintf('rgba(95, 196, 114, %.2f)', details.destinationScale(getFullCount(details.destinationCounts)));

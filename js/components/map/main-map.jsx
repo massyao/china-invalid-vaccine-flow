@@ -11,11 +11,8 @@ import CountBarsLayer from './map-count-bars-layer.jsx' ;
 import PointsLayer from './map-points-layer.jsx' ;
 import SimpleBordersLayer from './map-simple-borders-layer.jsx' ;
 import FrameRateLayer from './frame-rate-layer.jsx' ;
-//import  VaccineHighlightMixin  from './vaccine-highlight-mixin.js' ;
 import DataUpdated from '../data-updated.jsx' ;
-import VaccineConstants from '../../model/constants.js' ;
-
-//import  lucifyUtils  from 'lucify-commons/src/js/lucify-utils.jsx' ;
+import Constants from '../../model/constants.js' ;
 import lucifyUtils from '../../lib/lucify-utils.jsx' ;
 
 
@@ -395,7 +392,7 @@ class VaccineMap extends React.Component {
 
     getDataUpdated = () => {
         if (this.props.showDataUpdated) {
-            return <DataUpdated updatedAt={VaccineConstants.vaccine_count_APPLICANTS_DATA_UPDATED_MOMENT}/>;
+            return <DataUpdated updatedAt={Constants.APPLICANTS_DATA_UPDATED_MOMENT}/>;
         }
     }
 

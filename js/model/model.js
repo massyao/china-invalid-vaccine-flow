@@ -4,8 +4,8 @@ import randgen from 'randgen' ;
 
 var KILOMETERS_PER_DEGREE = 111;
 
-// single vaccine
-var Vaccine = function (startPoint, endPoint, originCountry, destinationCountry,
+// single MapPoint
+var MapPoint = function (startPoint, endPoint, originCountry, destinationCountry,
                         speed, endMoment, smartSpreadEnabled) {
 
     this.startPoint = startPoint;
@@ -35,44 +35,44 @@ var Vaccine = function (startPoint, endPoint, originCountry, destinationCountry,
 };
 
 
-Vaccine.prototype.getStartMoment = function () {
+MapPoint.prototype.getStartMoment = function () {
     return this.startMoment;
 };
 
 
-Vaccine.prototype._getStartMoment = function () {
+MapPoint.prototype._getStartMoment = function () {
     var ret = moment(this.endMoment);
     return ret.subtract(this.getTravelTime(), 'hours');
 };
 
 
-Vaccine.prototype.setRouteVaccineCount = function (count) {
+MapPoint.prototype.setRouteMapPointCount = function (count) {
     this.maxSideDeviation = Math.min(Math.max(0.3, count / 3000), 1.0);
 };
 
 
-Vaccine.prototype.getTravelTime = function () {
+MapPoint.prototype.getTravelTime = function () {
     return this.totalTravelTime;
 };
 
 
 /*
  * Get the distance travelled by the given
- * vaccine in kilometers
+ * MapPoint in kilometers
  */
-Vaccine.prototype.getTravelDistance = function () {
+MapPoint.prototype.getTravelDistance = function () {
     var x = this.endPoint[0] - this.startPoint[0];
     var y = this.startPoint[1] - this.endPoint[1];
     return Math.sqrt(x * x + y * y) * KILOMETERS_PER_DEGREE;
 };
 
 
-Vaccine.prototype.isPastStartMoment = function (mom) {
+MapPoint.prototype.isPastStartMoment = function (mom) {
     return mom.unix() > this.startMomentUnix;
 };
 
 
-Vaccine.prototype.getLocation = function (stamp) {
+MapPoint.prototype.getLocation = function (stamp) {
     if (stamp > this.endMomentUnix) {
         return this.endPoint;
     }
@@ -95,4 +95,4 @@ Vaccine.prototype.getLocation = function (stamp) {
 };
 
 
-export default Vaccine;
+export default MapPoint;

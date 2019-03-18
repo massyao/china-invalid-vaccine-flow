@@ -50,14 +50,14 @@ var createFullList = function (mapModel, vaccine_countData, peoplePerPoint, rand
             }
         });
 
-        if (Object.keys(skippedCountries).length > 0) {
-            console.log('Skipped the following countries that are not on map: ' + // eslint-disable-line
-                Object.keys(skippedCountries).join(', '));
+        // if (Object.keys(skippedCountries).length > 0) {
+        //     console.log('Skipped the following countries that are not on map: ' + // eslint-disable-line
+        //         Object.keys(skippedCountries).join(', '));
 
-            console.log('这些省匹配到数据: ' + // eslint-disable-line
-                Object.keys(pared_contries).join(', '));
+        //     console.log('这些省匹配到数据: ' + // eslint-disable-line
+        //         Object.keys(pared_contries).join(', '));
 
-        }
+        // }
         if (Object.keys(skippedFutureDataCountries).length > 0) {
             console.log('Not showing data that is past ' + // eslint-disable-line
                 VaccineConstants.DATA_END_MOMENT.format('ll') +

@@ -42,10 +42,6 @@ var bindToVaccineMapContext = function (Component) {
             };
         };
 
-
-        // displayName: 'VaccineContextDecorator'
-
-
         getPeoplePerPoint = () => {
             if (isFinite(this.props.peoplePerPoint)) {
                 return this.props.peoplePerPoint;
