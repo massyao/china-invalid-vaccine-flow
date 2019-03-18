@@ -109,7 +109,7 @@ class VaccineMapCountryCountsLayer extends React.Component {
     render() {
         this.lastUpdated = this.state.stamp;
         return (
-            <svg className="vaccine-map-country-counts-layer"
+            <svg className="map-country-counts-layer"
                  style={{width: this.props.width, height: this.props.height}}>
                 {this.renderTexts()}
             </svg>

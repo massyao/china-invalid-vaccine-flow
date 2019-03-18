@@ -13,17 +13,198 @@
 
 @import 'modules/modules.scss';
 
-@import "vaccine-main-content.scss";
-@import "vaccine-map.scss";
-@import "vaccine-map-segment.scss";
-@import "vaccine-map-borders-layer.scss";
-@import "vaccine-map-country-counts-layer.scss";
-@import "vaccine-map-country-labels-layer.scss";
-@import "vaccine-map-count-bars-layer.scss";
-@import "vaccine-map-controls-and-legend.scss";
-@import "vaccine-map-time-layer.scss";
-@import "vaccine-map-line-chart.scss";
-@import "vaccine-sankey.scss";
-@import "vaccine-sankey-segment.scss";
-@import "vaccine-soccer-segment.scss";
-@import "vaccine-data-updated.scss";
+.main-content {
+
+  .loading {
+    @include lucify-body-font();
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .inputs__instructions p {
+    max-width: 26rem;
+  }
+
+}
+
+
+
+.map {
+  position: relative;
+
+  svg, canvas {
+    position: absolute;
+    top: 0px;
+  }
+}
+
+.map {
+  background-color: $lucify-dark-blue;
+  color: #cccccc;
+  font-weight: 200;
+  letter-spacing: 0.1px;
+  overflow: hidden;
+}
+
+.map__loading {
+  font-family: $lucify-header-font;
+  padding: 2rem;
+  font-size: 24px;
+}
+
+.map__overlay-layer {
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+}
+
+
+
+.map-segment {
+
+  .inputs .nice-form-row {
+    margin-top: 8px;
+  }
+
+}
+
+
+.map-borders-layer {
+
+  .subunit {
+    fill: $lucify-very-dark-blue;
+    stroke-width: 1px;
+    //stroke: $lucify-cyan;
+    stroke: rgba($lucify-cyan, 0.40);
+    opacity: 0.99;
+  }
+
+  .subunit--overlay {
+    stroke-width: 1px;
+    //stroke: $lucify-cyan;
+    stroke: rgba($lucify-cyan, 0.40);
+
+    fill: rgba(26, 32, 43, 0.99);
+    transition: fill 0.4s ease-in-out;
+    opacity: 0.99;
+  }
+
+  .subunit--destination {
+    opacity: 0.5;
+    fill: rgba(95, 196, 114, 0.25);
+  }
+
+  .subunit--origin {
+    //opacity: 1.0;
+    //fill: rgba(190, 88, 179, 0.15);
+  }
+
+  .subunit--hovered {
+    fill: rgba(255, 255, 255, 0.10);
+  }
+
+  .subunit-invisible {
+    fill: transparent;
+    stroke: transparent;
+  }
+
+}
+
+
+
+.map-count-bars-layer {
+
+  .vaccine-bar {
+    fill: #ffad33;
+  }
+
+  .asylum-bar {
+    fill: #ffffff;
+  }
+  .vaccine_count-bar{
+      fill: #ffffff;
+  }
+}
+
+
+
+
+.map-country-labels-layer {
+
+  text {
+    fill: #ffffff;
+    opacity: 0.9;
+    font-family: $lucify-header-font;
+    text-anchor: middle;
+    font-size: 12px;
+  }
+
+  .highlighted {
+
+  }
+
+  .destination {
+    fill: #C9F0CE;
+
+  }
+
+  .origin {
+    fill: #FFC4D8;
+    //fill: rgba(190, 88, 179, 1.0);
+    //fill: rgba(255, 255, 255, 0.8);
+  }
+}
+
+
+
+
+
+.map-time-layer {
+  width: 100%;
+  //display: table;
+  //background-color: rgba(25, 25, 25, 0.25);
+  background-color: rgba(36, 44, 57, 0.4);
+  height: 100px;
+  z-index: 1;
+  position: relative;
+}
+
+
+
+
+.map-line-chart {
+  .c3-xgrid-line {
+    text {
+      fill: white;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    line {
+      stroke: white;
+    }
+  }
+}
+
+.map-line-chart__missing-data {
+  position: absolute;
+  left: 1em;
+  top: 0.5em;
+  z-index: 2;
+  color: white;
+  font-size: 14px;
+  padding-right: 4em; // don't go on top of the time chart at small screen sizes
+}
+
+.updated-at {
+  position: absolute;
+  text-align: right;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 0.8rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.5rem;
+  }
+}
+

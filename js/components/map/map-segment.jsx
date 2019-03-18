@@ -104,7 +104,7 @@ class VaccineMapSegment extends React.Component {
 
         return (
 
-            <div className="vaccine-map-segment">
+            <div className="map-segment">
                 <VaccineMap ref="rmap"
                             {...this.props}
                             interactionsEnabled={this.interactionsEnabled()}/>

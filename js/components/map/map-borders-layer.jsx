@@ -406,7 +406,7 @@ class VaccineMapBordersLayer extends React.Component {
 
     render() {
         return (
-            <svg className="vaccine-map-borders-layer"
+            <svg className="map-borders-layer"
                  style={{width: this.props.width, height: this.props.height}}
                  onClick={this.onClick}>
                 {this.getPaths()}

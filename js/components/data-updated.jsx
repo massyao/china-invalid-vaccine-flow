@@ -16,7 +16,7 @@ class VaccineDataUpdated extends React.Component {
 
     render() {
         return (
-            <div className="vaccine-updated-at">
+            <div className="updated-at">
                 Data updated<br/>
                 {this.props.updatedAt.format('MMM D, YYYY')}
             </div>

@@ -365,7 +365,7 @@ class VaccineMap extends React.Component {
         }
         return (
             <div
-                className="vaccine-map__overlay-layer"
+                className="map__overlay-layer"
                 style={{width: this.getWidth(), height: this.getHeight()}}>
             </div>
         );
@@ -409,14 +409,14 @@ class VaccineMap extends React.Component {
         let status = !this.props.vaccineCountsModel || !this.props.vaccinePointsModel || !this.props.mapModel;
         if (status) {
             return (
-                <div className="vaccine-map"
+                <div className="map"
                      style={{width: this.getWidth(), height: this.getHeight()}}>
-                    <div className="vaccine-map__loading">Loading...</div>
+                    <div className="map__loading">Loading...</div>
                 </div>
             );
         } else {
             return (
-                <div className="vaccine-map"
+                <div className="map"
                      style={{width: window.innerWidth, height: (window.innerHeight - 100)}}>
                     {this.getFirstBordersLayer()/*  map */}
                     {this.getCountBarsLayer()/*  people count  */}

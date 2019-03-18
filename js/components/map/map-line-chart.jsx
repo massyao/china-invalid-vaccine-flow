@@ -276,11 +276,11 @@ class VaccineMapLineChart extends React.Component {
 
     render() {
         return (
-            <div className='vaccine-map-line-chart'
+            <div className='map-line-chart'
                  onMouseOver={this.handleMouseOver}
                  onMouseLeave={this.handleMouseLeave}
                  onClick={this.handleOnClick}>
-                <span ref="missingData" className="vaccine-map-line-chart__missing-data"/>
+                <span ref="missingData" className="map-line-chart__missing-data"/>
                 <C3Chart
                     ref='c3Chart'
                     lineStrokeWidth={2}

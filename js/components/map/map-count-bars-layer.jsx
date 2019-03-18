@@ -170,7 +170,7 @@ class VaccineMapCountBarsLayer extends React.Component {
 
     render() {
         return (
-            <svg className="vaccine-map-count-bars-layer"
+            <svg className="map-count-bars-layer"
                  style={{width: this.props.width, height: this.props.height}}>
                 {this.getBarItems()}
             </svg>

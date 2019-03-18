@@ -4,8 +4,6 @@ import React from 'react' ;
 import HideableContainer from '../lib/hideable-container.jsx' ;
 import Decorator from './context-decorator.jsx' ;
 import VaccineMapSegment from './map/map-segment.jsx' ;
-//import  VaccineSankeySegment  from './vaccine-sankey/vaccine-sankey-segment.jsx' ;
-//import  VaccineSoccerSegment  from './vaccine-soccer/vaccine-soccer-segment.jsx' ;
 
 //import  Loading  from 'lucify-commons/src/js/components/loading.jsx' ;
 import Loading from '../lib/loading.jsx' ;
@@ -65,7 +63,7 @@ class VaccineMainContent extends React.Component {
         //          style={{minHeight: 800}}>
 
         return (
-            <div className="vaccine-main-content">
+            <div className="main-content">
                 {this.getLoadingSegment()}
                 {this.getMapSegment()}
             </div>
@@ -74,7 +72,4 @@ class VaccineMainContent extends React.Component {
 
 }
 
-// {this.getLoadingSegment()}
-//  {this.getSankeySegment()}
-//  {this.getSoccerSegment()}
 export default Decorator(VaccineMainContent);

@@ -24,7 +24,7 @@ class VaccineMapTimeLayer extends React.Component {
         }
 
         return (
-            <div className='vaccine-map-time-layer'>
+            <div className='map-time-layer'>
                 <VaccineMapLineChart {...this.props} stamp={this.state.stamp}/>
             </div>
         );
