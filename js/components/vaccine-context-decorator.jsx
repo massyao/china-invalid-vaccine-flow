@@ -69,7 +69,7 @@ var bindToVaccineMapContext = function (Component) {
 
             // promises.push(d3.jsonAsync(assets.data('vaccine.data.json')).then(function (data) {
             promises.push(d3.jsonAsync(assets.data('asylum.json')).then(function (data) {
-// amormaid
+                // amormaid
                 this.vaccine_countData = data;
             }.bind(this)));
 

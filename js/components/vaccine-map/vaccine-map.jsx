@@ -56,8 +56,10 @@ class VaccineMap extends React.Component {
     }
 
     getConicConformalProjection = () => {
-        var lo = this.props.lo || 114.53; // x
-        var la = this.props.la || 35.21; // y
+        var lo = 26.2206322; // x
+        var la = 46.0485818 - 8; // y
+        // var lo = this.props.lo || 114.53; // x
+        // var la = this.props.la || -35.21; // y
         return d3.geo.conicConformal()
             .center([0, la])
             .rotate([-lo, 0])
@@ -69,8 +71,8 @@ class VaccineMap extends React.Component {
 
 
     getAzimuthalEqualAreaProjection = () => {
-        var lo = this.props.lo || 114.53; // x
-        var la = this.props.la || 35.21; // y
+        var lo = this.props.lo || 26.2206322; // x
+        var la = this.props.la || 46.0485818 - 8; // y
 
         return d3.geo.azimuthalEqualArea()
         //.clipAngle(180 - 1e-3)
@@ -84,8 +86,8 @@ class VaccineMap extends React.Component {
 
 
     getWinkel3Projection = () => {
-        var lo = this.props.lo || 114.53; // x
-        var la = this.props.la || 35.21; // y
+        var lo = this.props.lo || 26.2206322; // x
+        var la = this.props.la || 46.0485818 - 8; // y
         //console.log(geoProjection);
 
         //  https://www.bootcdn.cn/d3-geo-projection/readme/
@@ -106,8 +108,8 @@ class VaccineMap extends React.Component {
 
 
     getMercatorProjection = () => {
-        var lo = this.props.lo || 114.53; // x
-        var la = this.props.la || 35.21; // y
+        var lo = this.props.lo || 26.2206322; // x
+        var la = this.props.la || 46.0485818 - 8; // y
 
         return d3.geo.mercator()
             .center([0, la])
@@ -453,9 +455,13 @@ VaccineMap.getDefaultProps = {
     height: (window.innerHeight - 100), //height: 1200,
     interactionsEnabled: true,
     showFps: false,
-    lo: 114.53,//lo: 22.2206322 + 7,
-    la: 35.21,//la: 32.0485818,
-    scale: 0.70, //  scale: 0.70,
+    // lo: 114.53,
+    // la: -35.21,
+    // lo: 22.2206322 + 7,
+    // la: 32.0485818,
+    lo: 26.2206322, // x
+    la: 46.0485818 - 8, // y
+    scale: 0.85, //  scale: 0.70,
     showDataUpdated: true
 }
 

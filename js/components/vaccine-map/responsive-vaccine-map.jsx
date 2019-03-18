@@ -39,9 +39,11 @@ class ResponsiveVaccineMap extends React.Component {
         // console.log("responsive vaccine map ",this.props);
         return (
             <div>
-                <VaccineMap ref="rmap" {...this.props}
-                            width={this.getWidth()}
-                            height={this.getHeight()}/>
+                <VaccineMap 
+                    ref="rmap" 
+                    {...this.props}
+                    width={this.getWidth()}
+                    height={this.getHeight()}/>
             </div>
         );
     }

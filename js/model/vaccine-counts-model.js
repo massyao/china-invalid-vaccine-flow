@@ -172,10 +172,10 @@ VaccineCountsModel.prototype._enrichCountsArray = function (arr) {
  */
 VaccineCountsModel.prototype._calculateMissingData = function () {
     // amormaid
-    // var destinationCountriesToCheck = [  'AUT', 'BEL', 'BGR', 'CHE', 'DEU', 'DNK', 'ESP', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 'ITA', 'NOR', 'NLD', 'SWE'];
-    var destinationCountriesToCheck = [
-        '广东', '香港', '福建', '江苏', '浙江', '北京', '山东', '澳门'
-    ];
+    var destinationCountriesToCheck = [  'AUT', 'BEL', 'BGR', 'CHE', 'DEU', 'DNK', 'ESP', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 'ITA', 'NOR', 'NLD', 'SWE'];
+    // var destinationCountriesToCheck = [
+    //     '广东', '香港', '福建', '江苏', '浙江', '北京', '山东', '澳门'
+    // ];
     var originCountriesToCheck = ['北京'];
     var yearsToCheck = [2016, 2017]; // TODO: remove 2016 once it has all the data
 
@@ -346,9 +346,9 @@ VaccineCountsModel.prototype.getDestinationCountries = function () {
 
 
 VaccineCountsModel.prototype.getDestinationCountriesWithMissingData = function (timestamp) {
-    //console.log("VaccineCountsModel.prototype._addMonthlyArrivals 777");
+    // console.log("VaccineCountsModel.prototype._addMonthlyArrivals 777");
     if (timestamp.isAfter(vaccineConstants.DATA_END_MOMENT)) {
-        console.log('trying to get data past end moment: ' + timestamp.format()); // eslint-disable-line
+        // console.log('trying to get data past end moment: ' + timestamp.format()); // eslint-disable-line
         timestamp = vaccineConstants.DATA_END_MOMENT;
     }
     //console.log("VaccineCountsModel.prototype._addMonthlyArrivals 888");

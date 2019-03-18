@@ -18,7 +18,7 @@ function VaccinePlayContextDecorator(Component) {
             console.log("moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(),",moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(),);
             // amormaid  key point    x-axis start point
             this.state = {
-                stamp: moment([2017,1,1]).unix() || moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(), // unix timestamps (seconds-precision)
+                stamp: moment([2012,1,1]).unix() || moment([VaccineConstants.DATA_START_YEAR, VaccineConstants.DATA_START_MONTH, 1]).unix(), // unix timestamps (seconds-precision)
                 speed: this.getDefaultSpeed(),
                 play: true,
                 start: true
