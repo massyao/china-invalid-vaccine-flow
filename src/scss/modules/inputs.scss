@@ -1,0 +1,27 @@
+
+.inputs {
+  background-color: $lucify-gray-background;
+  padding-bottom: 1.0rem;
+  padding-top: 3.0rem;
+  padding-bottom: 2.0rem;
+}
+
+.inputs__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.inputs__instructions {
+
+  h3 {
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  p {
+    //color: $lucify-gray-text-color;
+    max-width: 20rem;
+  }
+
+}

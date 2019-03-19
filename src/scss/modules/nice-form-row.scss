@@ -1,0 +1,56 @@
+
+.nice-form-row {
+  display: table;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.nice-form-row__title {
+  font-weight: bold;
+  display: table-cell;
+  padding-right: 1rem;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.nice-form-row__input {
+  //padding-left: 1rem;
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+  font-size: 0.95rem !important;
+  font-family: $lucify-body-font !important;
+}
+
+.nice-form-row__input-inner {
+  display: table;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.nice-form-row__input-main {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.nice-form-row__input-value {
+  font-size: 0.95rem !important;
+  display: table-cell;
+  padding-left: 2rem;
+  vertical-align: middle;
+}
+
+@media(max-width: 400px) {
+  .nice-form-row {
+    display: block;
+  }
+  .nice-form-row__title {
+    display: block;
+    padding-bottom: 1.0rem;
+  }
+  .nice-form-row__input {
+    display: block;
+  }
+}
