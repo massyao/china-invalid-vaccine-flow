@@ -18,9 +18,14 @@ module.exports = () => {
          path: Config.buildDir,
       },
       devServer: {
-         contentBase: Config.buildDir,
-         host: "0.0.0.0",
-         port: 12345
+        disableHostCheck: true,
+        compress: true,
+        open: true,
+        hot: true,
+        overlay: true, // 浏览器上也可以看到编译错误信息
+        contentBase: Config.buildDir,
+        host: "127.0.0.1",
+        port: 12345
       },
       module: {
          rules: [{
@@ -72,22 +77,23 @@ module.exports = () => {
          ],
       },
       plugins: [
-         new CleanWebpackPlugin([Config.buildDir]),
-         new CopyWebpackPlugin(
+        new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin([Config.buildDir]),
+        new CopyWebpackPlugin(
             [
                 {context: __dirname, from: "lib/**/*"},
                 {context: __dirname, from: "data/**/*"},
                 {context: __dirname, from: "images/**"}
             ] 
         ),
-         new HtmlWebpackPlugin({
+        new HtmlWebpackPlugin({
             template: "index.html",
             filename: "index.html"
-         }),
-         new webpack["DllReferencePlugin"]({
+        }),
+        new webpack["DllReferencePlugin"]({
             context: __dirname,
             manifest: require("./lib/vendors/manifest.vendors.json"),
-         }),
+        }),
       ],
     node: {
         fs: "empty"
