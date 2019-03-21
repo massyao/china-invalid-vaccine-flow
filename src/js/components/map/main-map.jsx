@@ -91,8 +91,10 @@ class VaccineMap extends React.Component {
         // https://github.com/d3/d3-geo-projection/blob/master/src/winkel3.js
         // https://bl.ocks.org/mbostock/3682676
 
-        //console.log("this.props.scale()  is ",this.props.scale);
-        this.props.scale = this.props.scale || 0.6;
+        console.log("this.props.scale()  is ",this.props.scale);
+        // console.log('main-map this is ')
+        // console.table(this)
+        // this.props.scale = this.props.scale || 0.6;
 
         return geoProjection.geoWinkel3()
             .center([0, la])
@@ -414,7 +416,7 @@ class VaccineMap extends React.Component {
         } else {
             return (
                 <div className="map"
-                     style={{width: window.innerWidth, height: (window.innerHeight - 100)}}>
+                    style={{width: window.innerWidth, height: (window.innerHeight - 100)}}>
                     {this.getFirstBordersLayer()/*  map */}
                     {this.getCountBarsLayer()/*  people count  */}
                     {this.getCountryLabelsLayer() /*  unknow */}

@@ -1,0 +1,149 @@
+<html>
+<body>
+
+<div id="root"></div>
+
+<script>
+console.time("wsx");
+
+var  data_5487 =[];
+
+
+
+var  data_8590 = [];
+
+
+    // data_5487   data_8590
+    // data_5487_length     data_8590_length
+
+    let  data_5487_length = data_5487.length;
+    let  data_8590_length = data_8590.length;
+    let  sortdata_8590 = {};
+    var provinces =     ["anhui", "beijing", "fujian", "gansu", "guangdong", "guangxi", "guizhou", "hainan", "hebei", "heilongjiang", "henan", "hubei", "hunan", "jiangsu", "jiangxi", "jilin", "liaoning", "neimenggu", "ningxia", "qinghai", "shan^xi", "shan_xi", "shandong", "shanghai", "sichuan", "tianjin", "xinjiang", "xizang", "yunnan", "zhejiang"];
+
+    //for(let i=0;i<provinces.length;i++){ sortdata_8590[provinces[i]] = []; }
+    //   将85到92年的数据整理到一个对象，按省份归类
+    for(let i=0;i<data_8590_length;i++){
+        let item = data_8590[i];
+        sortdata_8590[item.ac] = sortdata_8590[item.ac] || [] ;
+        sortdata_8590[item.ac].push(item);
+    }
+    
+    console.table(sortdata_8590);
+   //console.log(Object.keys(sortdata_8590));
+    
+
+
+//  \"\w*\s\w*\"  去空格
+
+
+
+    var obj = {};
+    const  data_arr_length =  data_5487.length;
+    var  parse_data = {};
+    let step_2_data = [];
+    let  final_data = [];
+    
+    
+    //   将54到87年的数据整理到一个对象，按年归类
+    for(let year = 1954;year <1988 ;year++){
+        parse_data[year] = "";
+         let  data_of_year = [];
+        for(let i = 0; i < data_arr_length ;i++){
+            if(data_5487[i].year - year === 0){
+                 data_of_year.push(data_5487[i]);
+            }
+        }
+         parse_data[year] = data_of_year;
+    }
+    
+      //console.table(parse_data);
+
+    for(let year = 1954;year <1985 ;year++){
+        //  某年 的数据
+        let   parse_data_year =  parse_data[year] ;
+        let  parse_data_year_length = parse_data_year.length ;
+        let  people_out_obj = {};
+
+        for(let i=0 ;i <parse_data_year_length ;i++){
+            //  某年 某省的数据  ac
+            let   parse_data_year_province  =  parse_data_year[i] ; 
+            let   ac_provience = parse_data_year_province.ac;
+            
+            //  利用85-92的数据统计到达目标省的所有人数
+            let   all_the_people_to_ac_provience = 0;
+            let   ac_provience_data = sortdata_8590[ac_provience];
+            //console.log(ac_provience_data);
+            for(let i=0;i<provinces.length ;i++){
+                let pi = ac_provience_data[i] && (ac_provience_data[i].pi - 0)  ||  0 ;
+                all_the_people_to_ac_provience += isNaN(pi) ?  0 :  pi ;
+            }
+            //console.log(ac_provience_data)
+            //alert(all_the_people_to_ac_provience)
+            
+            for(let j = 0 ;j<ac_provience_data.length ;j++){
+                //  某年 某省  的人口迁入数据
+                let  temp_obj = {};
+                temp_obj.year = parse_data_year_province.year;
+                temp_obj.oc = provinces[j];
+                temp_obj.ac = ac_provience ;
+                let pi  = parse_data_year_province.pi * ac_provience_data[j].pi / all_the_people_to_ac_provience - 0;
+                temp_obj.count = isNaN(pi) ? "-" : Math.round(pi) ;
+                
+                final_data.push(temp_obj);
+            }
+        }
+        
+    }
+    
+    console.log(final_data.length);
+    
+    //write_data_to_dom(final_data);
+    
+    document.getElementById("root").innerHTML = JSON.stringify(final_data);
+    
+    
+
+
+
+  console.timeEnd("wsx");
+  
+  /*   final data*/
+  
+  //    \/\*[^\/\*]+\*\/     匹配数据
+  
+      
+  function write_data_to_dom(arr){
+    let arr_length = arr.length;
+    let data_table = [];
+
+    data_table.push("<table>");
+    data_table.push("<thead><tr><th>ac</th><th>oc</th><th>count</th><th>year</th></tr></thead>");
+    data_table.push("<tbody>");
+    for(let i=0;i<arr_length ;i++){
+        let  data_item = arr[i] ;
+        data_table.push("<tr>");
+            data_table.push("<td>");
+                data_table.push(data_item.ac);
+            data_table.push("</td>"); 
+            data_table.push("<td>");
+                data_table.push(data_item.oc);
+            data_table.push("</td>"); 
+            data_table.push("<td>");
+                data_table.push(data_item.count);
+            data_table.push("</td>"); 
+            data_table.push("<td>");
+                data_table.push(data_item.year);
+            data_table.push("</td>"); 
+        data_table.push("</tr>"); 
+    }
+    data_table.push("</tbody>");
+    data_table.push("</table>");
+    
+    
+    document.getElementById("root").innerHTML = data_table.join("");
+  }  
+    
+</script>
+</body>
+</html>

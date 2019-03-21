@@ -3,7 +3,7 @@ import d3 from 'd3' ;
 var topojson = require('topojson');
 import React from 'react' ;
 import console from 'console-browserify' ;
-import Promise from 'bluebird' ;
+// import Promise from 'bluebird' ;
 
 import VaccineCountsModel from '../model/counts-model.js' ;
 import VaccinePointsModel from '../model/points-model.js' ;
@@ -16,7 +16,13 @@ import MapModel from '../model/map-model.js' ;
 import lucifyUtils from '../lib/lucify-utils.jsx' ;
 import assets from '../lib/lucify-assets.js' ;
 
-Promise.promisifyAll(d3);
+const jsonAsylumPath = require('../../data/asylum.json');
+const jsonTopomapPath = require('../../data/topomap.json');
+
+// console.log(jsonAsylumPath, jsonTopomapPath); // /file.3a855491.json
+
+
+// Promise.promisifyAll(d3);
 
 // Bind vaccine and map data to given map component
 //
@@ -57,27 +63,42 @@ var bindToVaccineMapContext = function (Component) {
         componentDidMount() {
             console.time('load json'); // eslint-disable-line
             var promises = [];
-            promises.push(d3.jsonAsync(assets.data('topomap.json'))
-                .then(function(data) {
-                // promises.push(d3.jsonAsync(assets.data('chinamap.topo.json')).then(function (data) {
-                    //console.log(data);
-                    this.topomap = data;
-                }.bind(this)));
+            // promises.push(d3.jsonAsync(assets.data('topomap.json'))
+            // promises.push(d3.jsonAsync(jsonTopomapPath)
+            //     .then(function(data) {
+            //     // promises.push(d3.jsonAsync(assets.data('chinamap.topo.json')).then(function (data) {
+            //         //console.log(data);
+            //         this.topomap = data;
+            //     }.bind(this)));
+
+            // d3.json(jsonTopomapPath, data => {
+            //     this.topomap = data;
+            // })
+
+            this.topomap = jsonTopomapPath;
 
             // promises.push(d3.jsonAsync(assets.data('vaccine.data.json')).then(function (data) {
-            promises.push(d3.jsonAsync(assets.data('asylum.json'))
-                .then(function (data) {
-                    // amormaid
-                    this.vaccine_countData = data;
-                }.bind(this)));
+            // promises.push(d3.jsonAsync(jsonAsylumPath)
+            //     .then(function (data) {
+            //         // amormaid
+            //         this.vaccine_countData = data;
+            //     }.bind(this)));
 
-            Promise.all(promises)
-                .then(function () {
-                    console.timeEnd('load json'); // eslint-disable-line
-                    this.dataLoaded();
-                }.bind(this), function (error) {
-                    throw error;
-                });
+            // d3.json(jsonAsylumPath, data => {
+            //     this.topomap = data;
+            // })
+
+            this.vaccine_countData = jsonAsylumPath;
+
+            // Promise.all(promises)
+            //     .then(function () {
+            //         console.timeEnd('load json'); // eslint-disable-line
+            //         this.dataLoaded();
+            //     }.bind(this), function (error) {
+            //         throw error;
+            //     });
+
+            this.dataLoaded();
         }
 
 

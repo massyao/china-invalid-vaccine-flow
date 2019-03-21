@@ -105,9 +105,9 @@ class VaccineMapPointsLayer extends React.Component {
 
         this.stage = new PIXI.Container();
 
-        this.vaccineContainer = new PIXI.Container();
-        this.vaccineContainer.alpha = 1.0;
-        this.stage.addChild(this.vaccineContainer);
+        this.container = new PIXI.Container();
+        this.container.alpha = 1.0;
+        this.stage.addChild(this.container);
 
         // for some reason the trails do not work
         // unless there is some graphics sharing the stage
@@ -134,7 +134,7 @@ class VaccineMapPointsLayer extends React.Component {
 
         this.lastWidth = this.getWidth();
 
-        this.vaccineContainer.removeChildren();
+        this.container.removeChildren();
 
         this.props.vaccinePointsModel.forEachActiveVaccine(this.getStamp(), function (r) {
             if (!r.sprite) {
@@ -163,7 +163,7 @@ class VaccineMapPointsLayer extends React.Component {
 
             // this gives best performance
             if (r.sprite.alpha == 1.0) {
-                this.vaccineContainer.addChild(r.sprite);
+                this.container.addChild(r.sprite);
             }
         }.bind(this));
 

@@ -50,9 +50,9 @@ class VaccineMapSegment extends React.Component {
     getPeoplePerPointText = () => {
 
         if (lucifyUtils.isSlowDevice()) {
-            return   <span>  Each moving point on the map represents10000 vaccines.  </span>;
+            return   <span>  Each moving point on the map represents 10000 .  </span>;
         }else{
-            return    <span> Each moving point on the map represents  5000 vaccines.  </span>;
+            return    <span> Each moving point on the map represents  5000 .  </span>;
         }
 
     }
@@ -106,8 +106,8 @@ class VaccineMapSegment extends React.Component {
 
             <div className="map-segment">
                 <VaccineMap ref="rmap"
-                            {...this.props}
-                            interactionsEnabled={this.interactionsEnabled()}/>
+                    {...this.props}
+                    interactionsEnabled={this.interactionsEnabled()}/>
 
                 <TimeLayer
                     ref="time"
@@ -115,44 +115,6 @@ class VaccineMapSegment extends React.Component {
                     stamp={this.props.stamp}
                     vaccineCountsModel={this.props.vaccineCountsModel}
                     mapModel={this.props.mapModel}/>
-                {
-                    /*
-              <Inputs>
-                <div className="lucify-container">
-
-                  <DividedCols
-                  first={
-                    <div className="inputs__instructions">
-                      <h3>Instructions</h3>
-                      <p className="first">
-                        The map below shows the flow of
-                        {' '}<b>vaccine_count seekers</b>{' '}
-                        to
-                        {' '}<b>European countries</b>{' '}
-                        over time.
-                      </p>
-
-                      <p className="last">
-                        {this.getPeoplePerPointText()}
-                      </p>
-                    </div>
-                  }
-                  second={
-                    <div className="inputs__instructions">
-                      <FormRow
-                      title={<div>Speed</div>}
-                      input={<Slider min={1} max={100}
-                      defaultValue={this.props.speed}
-                      onChange={this.props.handleSpeedChange} />} />
-
-                      {this.getInteractionsInstruction()}
-                    </div>
-                  } />
-                </div>
-              </Inputs>
-                 */
-                }
-
             </div>
         );
     }
