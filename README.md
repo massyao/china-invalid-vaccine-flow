@@ -5,4 +5,9 @@
 
 在线演示地址： http://www.china-invalid-vaccine-flow.cf
 <img src="https://i.loli.net/2018/07/29/5b5dd1042c5d0.jpg" alt=" bg2.jpg"/>
-目前缺乏详细的流向数据，个人会持续关注并更新数据，也希望关注这个事件的朋友寻找数据，让这个事件更加清楚
+
+2019-10-08 长生终止上市
+http://www.szse.cn/disclosure/notice/company/t20191008_571144.html
+
+2019-11-08 长生全资子公司破产清算
+http://disc.static.szse.cn/download/disc/disk02/finalpage/2019-11-08/c69ed62e-6839-4bde-960b-3c5c7c77e9fa.PDF
