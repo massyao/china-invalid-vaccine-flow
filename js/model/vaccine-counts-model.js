@@ -1,8 +1,8 @@
-import moment from 'moment' ;
-import utils from '../utils.js' ;
-import console from 'console-browserify' ;
+import moment from 'moment';
+import utils from '../utils.js';
+import console from 'console-browserify';
 
-import vaccineConstants from './vaccine-constants.js' ;
+import vaccineConstants from './vaccine-constants.js';
 
 
 /*
@@ -43,13 +43,13 @@ var VaccineCountsModel = function (vaccine_countData) {
 VaccineCountsModel.prototype._initializeDataStructures = function (data) {
     //  console.log(data && data instanceof  Object && data.length);
     this.globalVaccines = this._prepareYearsMonthsArray(function () {
-        return {count: 0};
+        return { count: 0 };
     });
 
     data.forEach(function (item) {
         if (!this.arrivedVaccinesToCountry[item.ac]) {
             this.arrivedVaccinesToCountry[item.ac] = this._prepareYearsMonthsArray(function () {
-                return {count: 0};
+                return { count: 0 };
             });
         }
 
@@ -64,7 +64,7 @@ VaccineCountsModel.prototype._initializeDataStructures = function (data) {
 
 
 VaccineCountsModel.prototype._prepareYearsMonthsArray = function (initialDataGenerator) {
-   //console.log("VaccineCountsModel.prototype._prepareYearsMonthsArray is ",vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
+    //console.log("VaccineCountsModel.prototype._prepareYearsMonthsArray is ",vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
     var ret = new Array(vaccineConstants.DATA_END_YEAR - vaccineConstants.DATA_START_YEAR + 1);
     for (var y = 0; y < ret.length; y++) {
         ret[y] = new Array(12);
@@ -82,7 +82,7 @@ VaccineCountsModel.prototype._ensurePairInitialized = function (pc, dim1, dim2) 
     }
     if (!pc[dim1][dim2]) {
         pc[dim1][dim2] = this._prepareYearsMonthsArray(function () {
-            return {count: 0};
+            return { count: 0 };
         });
     }
 };
@@ -217,13 +217,13 @@ VaccineCountsModel.prototype._prepareTotalCount = function (item, endStamp, debu
     var yearIndex = mom.year() - vaccineConstants.DATA_START_YEAR;
     var monthIndex = mom.month();
     var country = item;
-//console.log("country is ",country);
+    //console.log("country is ",country);
     if (!country) {
-        return {vaccine_countApplications: 0};
+        return { vaccine_countApplications: 0 };
     } else if (!country[yearIndex]) {
         console.log('nothing found for year ' + yearIndex + ', debugInfo: ' + // eslint-disable-line
             debugInfo + ', stamp ' + endStamp);
-        return {vaccine_countApplications: 0};
+        return { vaccine_countApplications: 0 };
     } else {
         try {
             let data = Math.round(country[yearIndex][monthIndex].totalArrivedAtStartOfMonth +
