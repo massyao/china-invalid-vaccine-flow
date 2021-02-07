@@ -1,12 +1,12 @@
-import moment from 'moment' ;
-import Vec2 from 'vec2' ;
-import randgen from 'randgen' ;
+import moment from 'moment';
+import Vec2 from 'vec2';
+import randgen from 'randgen';
 
 var KILOMETERS_PER_DEGREE = 111;
 
 // single vaccine
 var Vaccine = function (startPoint, endPoint, originCountry, destinationCountry,
-                        speed, endMoment, smartSpreadEnabled) {
+    speed, endMoment, smartSpreadEnabled) {
 
     this.startPoint = startPoint;
     this.endPoint = endPoint;
