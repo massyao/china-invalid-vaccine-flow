@@ -1,8 +1,8 @@
-import React from 'react' ;
+import React from 'react';
 import ReactDOM from "react-dom";
-import d3 from 'd3' ;
-import _ from 'underscore' ;
-import sprintf from 'sprintf-js' ;
+import d3 from 'd3';
+import _ from 'underscore';
+import sprintf from 'sprintf-js';
 //import  console  from 'console-browserify' ;
 
 
@@ -109,18 +109,18 @@ class VaccineMapBorder extends React.Component {
 
         var overlay = this.props.enableOverlay ? (
             <path key="p2" ref="overlay"
-                  className="subunit--overlay"
-                  onMouseOver={this.onMouseOver}
-                  onMouseLeave={this.onMouseLeave}
-                  d={d}/>) : null;
+                className="subunit--overlay"
+                onMouseOver={this.onMouseOver}
+                onMouseLeave={this.onMouseLeave}
+                d={d} />) : null;
 
         return (
             <g>
                 <path key="p1"
-                      className={this.props.subunitClass}
-                      d={d}
-                      onMouseOver={this.onMouseOver}
-                      onMouseLeave={this.onMouseLeave}/>
+                    className={this.props.subunitClass}
+                    d={d}
+                    onMouseOver={this.onMouseOver}
+                    onMouseLeave={this.onMouseLeave} />
                 {overlay}
             </g>
         );
@@ -407,8 +407,8 @@ class VaccineMapBordersLayer extends React.Component {
     render() {
         return (
             <svg className="vaccine-map-borders-layer"
-                 style={{width: this.props.width, height: this.props.height}}
-                 onClick={this.onClick}>
+                style={{ width: this.props.width, height: this.props.height }}
+                onClick={this.onClick}>
                 {this.getPaths()}
             </svg>
         );

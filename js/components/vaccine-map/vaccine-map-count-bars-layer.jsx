@@ -1,7 +1,7 @@
-import React from 'react' ;
+import React from 'react';
 import ReactDOM from "react-dom";
-import d3 from 'd3' ;
-import moment from 'moment' ;
+import d3 from 'd3';
+import moment from 'moment';
 
 
 class VaccineMapCountBar extends React.Component {
@@ -63,7 +63,7 @@ class VaccineMapCountBar extends React.Component {
                     width={width}
                     x={0}
                     height={0}
-                    y={0}/>
+                    y={0} />
             </g>
         );
     }
@@ -80,12 +80,12 @@ class VaccineMapCountBarsLayer extends React.Component {
 
 
     getTotal() {
-       //console.log("this.props.vaccineCountsModel.getTotalDestinationCounts is ",this.props.vaccineCountsModel.getTotalDestinationCounts);
+        //console.log("this.props.vaccineCountsModel.getTotalDestinationCounts is ",this.props.vaccineCountsModel.getTotalDestinationCounts);
         if (!this._total) {
             this._total = this.props.vaccineCountsModel.getTotalDestinationCounts('河南', moment().unix()).vaccine_countApplications;
         }
-        console.log("this._total is",this._total);
-        return  this._total;
+        console.log("this._total is", this._total);
+        return this._total;
     }
 
 
@@ -130,6 +130,7 @@ class VaccineMapCountBarsLayer extends React.Component {
                     {...props} />);
             }.bind(this));
         }
+        console.log('getBarItems', items)
 
         return items;
     }
@@ -171,7 +172,7 @@ class VaccineMapCountBarsLayer extends React.Component {
     render() {
         return (
             <svg className="vaccine-map-count-bars-layer"
-                 style={{width: this.props.width, height: this.props.height}}>
+                style={{ width: this.props.width, height: this.props.height }}>
                 {this.getBarItems()}
             </svg>
         );

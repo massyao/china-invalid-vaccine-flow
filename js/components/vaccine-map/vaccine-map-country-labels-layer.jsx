@@ -1,7 +1,7 @@
-import React from 'react' ;
-import _ from 'underscore' ;
+import React from 'react';
+import _ from 'underscore';
 
-import vaccineConstants from '../../model/vaccine-constants.js' ;
+import vaccineConstants from '../../model/vaccine-constants.js';
 
 
 class VaccineMapCountryLabelsLayer extends React.Component {
@@ -67,7 +67,7 @@ class VaccineMapCountryLabelsLayer extends React.Component {
     render() {
         return (
             <svg className="vaccine-map-country-labels-layer"
-                 style={{width: this.props.width, height: this.props.height}}>
+                style={{ width: this.props.width, height: this.props.height }}>
                 {this.renderCountryLabels()}
             </svg>
         );

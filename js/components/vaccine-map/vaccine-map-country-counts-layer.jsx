@@ -1,14 +1,14 @@
-import React from 'react' ;
-import _ from 'underscore' ;
+import React from 'react';
+import _ from 'underscore';
 
-import vaccineConstants from '../../model/vaccine-constants.js' ;
+import vaccineConstants from '../../model/vaccine-constants.js';
 
 
 class VaccineMapCountryCountsLayer extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {state: null}
+        this.state = { state: null }
     }
 
     // displayName: 'VaccineMapCountryCountsLayer'
@@ -94,7 +94,7 @@ class VaccineMapCountryCountsLayer extends React.Component {
     // by passing along the stamp to the state of this component,
     // we can trigger a re-render for specifically this component
     updateForStamp = (stamp) => {
-        this.setState({stamp: stamp});
+        this.setState({ stamp: stamp });
     }
 
 
@@ -110,7 +110,7 @@ class VaccineMapCountryCountsLayer extends React.Component {
         this.lastUpdated = this.state.stamp;
         return (
             <svg className="vaccine-map-country-counts-layer"
-                 style={{width: this.props.width, height: this.props.height}}>
+                style={{ width: this.props.width, height: this.props.height }}>
                 {this.renderTexts()}
             </svg>
         );

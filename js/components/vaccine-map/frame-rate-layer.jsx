@@ -1,5 +1,5 @@
-import React from 'react' ;
-import d3 from 'd3' ;
+import React from 'react';
+import d3 from 'd3';
 
 // only used for testing, this will be disabled
 // in production
@@ -41,7 +41,7 @@ class FrameRateLayer extends React.Component {
 
     render() {
         return (
-            <div className="frame-rate-layer" style={{padding: '1rem'}}>
+            <div className="frame-rate-layer" style={{ padding: '1rem' }}>
                 <span ref="fpsVal">?</span> fps
             </div>
         );
