@@ -1,4 +1,4 @@
-import moment from 'moment' ;
+import moment from 'moment';
 
 // note that month indices are zero-based
 
