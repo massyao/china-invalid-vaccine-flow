@@ -1,8 +1,8 @@
-import moment from 'moment' ;
+import moment from 'moment';
 
-import Vaccine from './vaccine.js' ;
-import VaccineConstants from './vaccine-constants.js' ;
-import utils from '../utils.js' ;
+import Vaccine from './vaccine.js';
+import VaccineConstants from './vaccine-constants.js';
+import utils from '../utils.js';
 
 
 /*
@@ -16,20 +16,6 @@ var createFullList = function (mapModel, vaccine_countData, peoplePerPoint, rand
     var skippedFutureDataCountries = {};
 
     if (vaccine_countData) {
-        //console.log("vaccine_countData has elements of ",vaccine_countData.length);
-        /*
-        var  arr_sample = [];
-        for(var i = 0;i<100;i++){
-            arr_sample.push(vaccine_countData[i]);
-        } */
-        //console.table(arr_sample);
-
-
-        //  mapModel    数据的模型对象
-        //  peoplePerPoint  25
-        //   randomStartPointfalse
-        //    smartSpreadEnabled  true
-        //console.log(mapModel,"\n", peoplePerPoint, "\n",randomStartPoint, "\n",smartSpreadEnabled)
         vaccine_countData.forEach(function (item) {
             if (!mapModel.containsCountry(item.ac)) {
                 skippedCountries[item.ac] = true;
