@@ -1,4 +1,4 @@
-import console from 'console-browserify' ;
+import console from 'console-browserify';
 
 
 var VaccinePointsModel = function (vaccines, randomStartPoint, smartSpreadEnabled) {
