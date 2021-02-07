@@ -61,22 +61,22 @@
 @mixin lucify-gradient() {
   background-color: $lucify-gradient-start;
   background: linear-gradient(to right,
-          $lucify-gradient-start,
-          $lucify-gradient-end);
+    $lucify-gradient-start,
+    $lucify-gradient-end);
 }
 
 @mixin lucify-alpha-gradient() {
   background-color: $lucify-gradient-start;
   background: linear-gradient(to right,
-          $lucify-alpha-gradient-start,
-          $lucify-alpha-gradient-end);
+    $lucify-alpha-gradient-start,
+    $lucify-alpha-gradient-end);
 }
 
 @mixin lucify-vertical-gradient() {
   background-color: $lucify-gradient-start;
   background: linear-gradient(to bottom,
-          $lucify-gradient-start,
-          $lucify-gradient-end);
+    $lucify-gradient-start,
+    $lucify-gradient-end);
 }
 
 @mixin lucify-embed-code() {
