@@ -61,10 +61,10 @@ module.exports = () => {
                name: "fonts/[name].[hash].[ext]",
                limit: 1
             }
-         },{
+         }, {
             test: require.resolve('topojson'),
             loader: "exports?topojson"
-         },{
+         }, {
             test: require.resolve('d3-geo-projection'),
             loader: "exports?geoProjection"
          }
@@ -75,11 +75,11 @@ module.exports = () => {
          new CleanWebpackPlugin([Config.buildDir]),
          new CopyWebpackPlugin(
             [
-                {context: __dirname, from: "lib/**/*"},
-                {context: __dirname, from: "data/**/*"},
-                {context: __dirname, from: "images/**"}
-            ] 
-        ),
+               { context: __dirname, from: "lib/**/*" },
+               { context: __dirname, from: "data/**/*" },
+               { context: __dirname, from: "images/**" }
+            ]
+         ),
          new HtmlWebpackPlugin({
             template: "index.html",
             filename: "index.html"
@@ -89,8 +89,8 @@ module.exports = () => {
             manifest: require("./lib/vendors/manifest.vendors.json"),
          }),
       ],
-    node: {
-        fs: "empty"
-    }
+      node: {
+         fs: "empty"
+      }
    }
 };
